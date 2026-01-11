@@ -4,16 +4,32 @@
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#nvl
 
+define book_stanzas_padding = {
+    1: 300,
+    2: 180,
+    3: 100,
+    4: 40
+}
+
+transform book_img_left:
+    subpixel True
+    anchor (0.5, 0.5)
+    pos (0.30, 0.5)
+
+transform book_img_right:
+    subpixel True
+    anchor (0.5, 0.5)
+    pos (0.71, 0.5)
 
 screen nvl(dialogue, items=None):
 
     if book_nvl_mode:
-        $ text_w = 500 # xmaximum
-        $ page_h = 660 # Высота текста (740 - 40*2)
+        $ text_w = 750
+        $ page_h = 740
+        $ current_padding = book_stanzas_padding.get(book_page_stanzas, 40)
+        $ book_stanzas_spacing = 40
 
-        if book_two_columns:
-            $ d_left, d_right = split_nvl_by_height(dialogue, text_w, page_h)
-        elif book_page_side == "left":
+        if book_page_side == "left":
             $ d_left = dialogue
             $ d_right = []
         else:
@@ -26,24 +42,32 @@ screen nvl(dialogue, items=None):
                 frame:
                     background None
                     at book_img_left
-                    xsize 560 ysize 740
-                    padding (30, 40)
+                    xsize text_w ysize page_h
+                    left_padding 200
+                    top_padding current_padding
                     vbox:
-                        spacing 15
+                        spacing book_stanzas_spacing
                         for d in d_left:
-                            text d.what id d.what_id style "book_nvl_text"
+                            if d == dialogue[-1]:
+                                text d.what id d.what_id style "book_nvl_text" at appear(0.5)
+                            else:
+                                text d.what id d.what_id style "book_nvl_text"
 
             # Правая страница
             if d_right:
                 frame:
                     background None
                     at book_img_right
-                    xsize 560 ysize 740
-                    padding (30, 40)
+                    xsize text_w ysize page_h
+                    left_padding 180
+                    top_padding current_padding
                     vbox:
-                        spacing 15
+                        spacing book_stanzas_spacing
                         for d in d_right:
-                            text d.what id d.what_id style "book_nvl_text"
+                            if d == dialogue[-1]:
+                                text d.what id d.what_id style "book_nvl_text" at appear(0.5)
+                            else:
+                                text d.what id d.what_id style "book_nvl_text"
 
             if items:
                 vbox:
@@ -55,7 +79,6 @@ screen nvl(dialogue, items=None):
                             text_hover_color "#8b5e34"
 
     else:
-        # Обычный NVL
         window:
             style "nvl_window"
             has vbox:
@@ -78,19 +101,34 @@ screen nvl_dialogue(dialogue):
 
     for d in dialogue:
 
-        window:
-            id d.window_id
+        if d == dialogue[-1]:
+            window at appear(0.5):
+                id d.window_id
 
-            fixed:
-                yfit gui.nvl_height is None
+                fixed:
+                    yfit gui.nvl_height is None
 
-                if d.who is not None:
+                    if d.who is not None:
 
-                    text d.who:
-                        id d.who_id
+                        text d.who:
+                            id d.who_id
 
-                text d.what:
-                    id d.what_id
+                    text d.what:
+                        id d.what_id
+        else:
+            window:
+                id d.window_id
+
+                fixed:
+                    yfit gui.nvl_height is None
+
+                    if d.who is not None:
+
+                        text d.who:
+                            id d.who_id
+
+                    text d.what:
+                        id d.what_id
 
 
 ## Это контролирует максимальное число строк NVL, могущих показываться за раз.
@@ -109,7 +147,7 @@ style nvl_window:
     xfill True
     yfill True
 
-    background "gui/nvl.png"
+    background None
     padding gui.nvl_borders.padding
 
 style nvl_entry:
@@ -151,3 +189,18 @@ style nvl_button:
 
 style nvl_button_text:
     properties gui.text_properties("nvl_button")
+    
+style book_nvl_text:
+    xpos 0
+    xanchor 0
+    xsize None
+    xmaximum 500
+    
+    font "gui/fonts/Lora-Regular.ttf"
+    size 24
+    line_spacing 7
+    color "#2b1d0e"
+    xalign 0.0
+    text_align 0.0
+    layout "tex"
+    subpixel True

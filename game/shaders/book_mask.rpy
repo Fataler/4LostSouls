@@ -1,13 +1,3 @@
-default book_current_img = None
-default book_layout = "left"
-default book_page_id = 0
-default book_left_text = ""
-default book_right_text = ""
-default book_split_stage = 0
-
-image book_bg = Solid("#f5f5dc", xsize=1400, ysize=900)
-image room_bg = Solid("#332211")
-
 init -2 python:
     renpy.register_shader(
         "fx.book_mask",
@@ -67,10 +57,10 @@ init -2 python:
     )
 
 transform book_masked(
-    scale=4.0,
-    speed=0.12,
-    base=0.495,
-    noise=0.10,
+    scale=2.0,
+    speed=0.09,
+    base=0.50,
+    noise=0.08,
     edge=0.09
 ):
     mesh True

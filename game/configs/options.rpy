@@ -1,4 +1,4 @@
-﻿## Данный файл содержит настройки, способные изменить вашу игру.
+## Данный файл содержит настройки, способные изменить вашу игру.
 ##
 ## Строки, начинающиеся  с двух '#' — комментарии, и вы не должны их
 ## раскомментировать. Строки, начинающиеся с одной '#' — комментированный код,
@@ -115,6 +115,22 @@ define config.end_game_transition = Dissolve(1)
 ## Переменная, устанавливающая переход, когда старт игры не существует. Вместо
 ## неё используйте функцию with после показа начальной сценки.
 
+## Ignored Keys ################################################################
+
+init python:
+    ignored_keys = ['mousedown_2', 'mouseup_2']
+    # Disable Middle Mouse Button (MMB) by removing it from all keymap actions
+    for action in config.keymap:
+        for key in ignored_keys:
+            if key in config.keymap[action]:
+                config.keymap[action].remove(key)
+
+    # Ensure 'a' and 'A' keys toggle auto-forward mode
+    for k in ['a', 'A']:
+        if k not in config.keymap['toggle_afm']:
+            config.keymap['toggle_afm'].append(k)
+
+##
 
 ## Управление окнами ###########################################################
 ##
@@ -126,7 +142,7 @@ define config.end_game_transition = Dissolve(1)
 ## После начала игры этот параметр можно изменить с помощью "window show",
 ## "window hide" и "window auto".
 
-define config.window = "auto"
+define config.window = "hide"
 
 #define config.layers = [ 'master', 'transient', 'screens', 'overlay']
 
