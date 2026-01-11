@@ -21,37 +21,10 @@ init -1:
 
 
 # Фоны
-image bg_coridor1_dark = "images/Backgrounds/Coridor1_dark.jpg"
-image bg_coridor1_default = "images/Backgrounds/Coridor1_default.jpg"
-image bg_coridor1_red = "images/Backgrounds/Coridor1_red.jpg"
-image bg_coridor2_dark = "images/Backgrounds/Coridor2_dark.jpg"
-image bg_coridor2_default = "images/Backgrounds/Coridor2_default.jpg"
-image bg_coridor2_red = "images/Backgrounds/Coridor2_red.jpg"
-image bg_coridor2_red_smoke = "images/Backgrounds/Coridor2_red_smoke.png"
-image bg_coridor3_dark = "images/Backgrounds/Coridor3_dark.jpg"
-image bg_coridor3_default = "images/Backgrounds/Coridor3_default.jpg"
-image bg_coridor3_red = "images/Backgrounds/Coridor3_red.jpg"
-image bg_coridor3_default_cylinders = "images/Backgrounds/Coridor3_default_cylinders.jpg"
-image bg_coridor3_red_cylinders = "images/Backgrounds/Coridor3_red_cylinders.jpg"
-image bg_coridor3_red_cylinders_smoke = "images/Backgrounds/Coridor3_red_cylinders_smoke.png"
-image bg_coridor3_dark_cylinders = "images/Backgrounds/Coridor3_dark_cylinders.jpg"
-image bg_dinner_block = "images/Backgrounds/Dinner_Block.jpg"
-image bg_dinner_block_dark = "images/Backgrounds/Dinner_Block_dark.jpg"
-image bg_med_block = "images/Backgrounds/Med_Block.jpg"
-image bg_med_block_red = "images/Backgrounds/Med_Block_red.jpg"
-image bg_med_block_dark = "images/Backgrounds/Med_Block_dark.jpg"
-image bg_generator = "images/Backgrounds/Generator.jpg"
-image bg_generator_blue_screen = "images/Backgrounds/Generator_default_blue_screen.jpg"
-image bg_generator_red = "images/Backgrounds/Generator_red.jpg"
-image bg_generator_dark = "images/Backgrounds/Generator_dark.jpg"
-image bg_engine = "images/Backgrounds/Engine.jpg"
-image bg_safe = "images/Backgrounds/Safe.jpg"
-image bg_monitors_block = "images/Backgrounds/Monitors_Block.jpg"
-image bg_warehouse = "images/Backgrounds/Warehouse.jpg"
-image bg_exit = "images/Backgrounds/Exit.png"
-image bg_exit_open = "images/Backgrounds/Exit_without_door.png"
-image exit_door = "images/Backgrounds/Exit_door.png"
-image bg_safe_open = "images/Backgrounds/Safe_open.jpg"
+image bg_book = "images/Book/Fon_kniga.png"
+image bg_book_elka = At(Button(child="images/Book/Elka.png", action=NullAction(), focus_mask=True, style="empty"), sway_hover)
+image bg_book_svet = At(Transform("images/Book/Svet_book.png", anchor=(1.0, 0.0)), candle_pulsation)
+image book_logo = "images/Book/logo_black.png"
 
 
 # credits images
@@ -98,25 +71,6 @@ image bg_black_t_60 = Solid("#00000099")
 image bg_black_t_70 = Solid("#000000b3")
 image bg_black_t_80 = Solid("#000000cc")
 image bg_black_t_90 = Solid("#000000e6")
-
-## цгшки
-image mirror_default:
-    "images/CG/CG_mirror/CG_mirror.png"
-
-image mirror_dark:
-    "images/CG/CG_mirror/CG_mirror_dark.png"
-
-image mirror_water:
-    "images/CG/CG_mirror/CG_mirror_water.png"
-
-image room_viktor1:
-    "images/CG/CG_Victor_room/cg_Room Viktor1.png"
-
-image room_viktor2:
-    "images/CG/CG_Victor_room/cg_Room Viktor2.jpg"
-
-image room_viktor3:
-    "images/CG/CG_Victor_room/cg_Room Viktor3.jpg"
 
 image bg_menu_main = "gui/menu/bg.png"
 

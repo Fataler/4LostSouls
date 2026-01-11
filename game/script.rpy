@@ -1,5 +1,5 @@
 ﻿label start:
-    jump day_0_prologue
+    jump start_book
 #    menu:
 #            "Начало игры":
 #                jump day_0_prologue

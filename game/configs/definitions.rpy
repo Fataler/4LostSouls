@@ -10,3 +10,8 @@ default PAUSE_MENU_SCREEN = "pause_menu"
 define splash_enabled = False
 
 default textbox_style = "gui/textbox.png"
+
+# chars
+define book_nvl = Character(None, kind=nvl, what_style="book_nvl_text")
+define girl = Character(None)
+define mom = Character(None)

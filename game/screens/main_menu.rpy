@@ -1,4 +1,7 @@
-image menu_fon = "gui/menu/bg.png"
+image menu_svet = "gui/menu/Menu_2_svet.png"
+image menu_bg = "gui/menu/Menu_1.png"
+image menu_okno = "gui/menu/Menu_2_okno.png"
+
 image menu_logo = "gui/menu/logo_white.png"
 image menu_pin = "gui/menu/pin.png"
 
@@ -8,18 +11,22 @@ screen main_menu(from_game_menu=False):
     $ elements_apperar_time = 0.5
         
     add "bg_black"
-    add "menu_fon"
+    add "menu_okno"
     add "main_menu_snow":
         pos (900, 0)
 
+    add "menu_bg"
+
+    add "menu_svet" at candle_pulsation_alpha
+
     add "menu_logo":
         at delay_appear(1, elements_apperar_time)
-        pos (150, 44)
+        pos (150, 80)
 
-    textbutton "Игра создана в рамках Капелла 3 2026":
+    textbutton "Игра создана в рамках Капелла Jam 3 2026":
         at delay_appear(1 + 1.75, elements_apperar_time)
         pos (0.025, 0.95)
-        text_size 40
+        text_size 20
         text_align 0.5
         action OpenURL(URL_JAM)
         hover_mouse "inspect"
@@ -27,36 +34,36 @@ screen main_menu(from_game_menu=False):
     style_prefix "main_menu"
 
     vbox:
-        spacing 10
-        align (0.20, 0.85)
+        spacing 5
+        align (0.11, 0.76)
     
         button action Start() at delay_appear(1 + 0.25, elements_apperar_time):
             style "main_menu_button"
             hbox:
                 spacing 20
                 add "menu_pin" at pin_hover_transform yalign 0.5
-                text _("Начать") style "main_menu_button_text" size 90 yalign 0.5
+                text _("Начать") style "main_menu_button_text" size 70 yalign 0.5
 
         button action ShowMenu("load") at delay_appear(1 + 0.5, elements_apperar_time):
             style "main_menu_button"
             hbox:
                 spacing 20
                 add "menu_pin" at pin_hover_transform yalign 0.5
-                text _("Загрузить") style "main_menu_button_text" size 55 yalign 0.5
+                text _("Загрузить") style "main_menu_button_text" size 40 yalign 0.5
 
         button action ShowMenu("preferences") at delay_appear(1 + 0.75, elements_apperar_time):
             style "main_menu_button"
             hbox:
                 spacing 20
                 add "menu_pin" at pin_hover_transform yalign 0.5
-                text _("Настройки") style "main_menu_button_text" size 55 yalign 0.5
+                text _("Настройки") style "main_menu_button_text" size 40 yalign 0.5
 
         button action [ShowMenu("about")] at delay_appear(1 + 1, elements_apperar_time):
             style "main_menu_button"
             hbox:
                 spacing 20
                 add "menu_pin" at pin_hover_transform yalign 0.5
-                text _("Об игре") style "main_menu_button_text" size 55 yalign 0.5
+                text _("Об игре") style "main_menu_button_text" size 40 yalign 0.5
 
         if renpy.variant("pc"):
             button action Quit(confirm=not main_menu) at delay_appear(1 + 1.25, elements_apperar_time):
@@ -64,7 +71,7 @@ screen main_menu(from_game_menu=False):
                 hbox:
                     spacing 20
                     add "menu_pin" at pin_hover_transform yalign 0.5
-                    text _("Выход") style "main_menu_button_text" size 50 yalign 0.5
+                    text _("Выход") style "main_menu_button_text" size 40 yalign 0.5
 
     if show_main_menu_fade:
         add "bg_black" at menu_alpha_out(1)
@@ -86,10 +93,10 @@ style main_menu_button_text:
 
 style main_menu_vbox is vbox:
     xalign 1.0
-    xoffset -30
+    #xoffset -30
+    #yoffset -30
     xmaximum 1200
     yalign 1.0
-    yoffset -30
 
 style main_menu_text is gui_text:
     properties gui.text_properties("main_menu", accent=True)

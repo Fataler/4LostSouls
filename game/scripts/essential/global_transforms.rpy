@@ -2,15 +2,53 @@ init -1:
     transform set_bright_hovered(brightness_level=0.1):
         matrixcolor BrightnessMatrix(brightness_level)
 
+    transform sway_hover:
+        subpixel True
+        rotate_pad False
+        on hover:
+            block:
+                ease 0.13 xoffset 2 yoffset 1
+                ease 0.12 xoffset -2 yoffset -1
+                ease 0.17 xoffset 1 yoffset -2
+                ease 0.12 xoffset -1 yoffset 2
+                ease 0.16 xoffset 1.5 yoffset -1.5
+                ease 0.2 xoffset 0 yoffset 0
+        on idle:
+            linear 0.5 rotate 0.0 xoffset 0 yoffset 0
+
+    transform candle_pulsation:
+        subpixel True
+        
+        block:
+            ease 0.8 zoom 1.01 alpha 1.0
+            ease 1.2 zoom 0.99 alpha 0.95
+            ease 1.0 zoom 1.005 alpha 0.98
+            ease 1.5 zoom 0.995 alpha 1.0
+            ease 0.9 zoom 1.01 alpha 0.96
+            ease 1.3 zoom 1.0 alpha 1.0
+            pause 0.5
+            repeat
+
+    transform candle_pulsation_alpha:
+        alpha 1.0
+        ease 0.8 alpha 1.0
+        ease 1.2 alpha 0.60
+        ease 1.0 alpha 0.75
+        ease 1.5 alpha 1.0
+        ease 0.9 alpha 0.70
+        ease 1.3 alpha 1.0
+        pause 0.5
+        repeat
+
     transform appear(time = 1.0, delay = 0.0):
-        alpha 0
+        alpha 0.0
         pause delay
-        linear time alpha 1
+        linear time alpha 1.0
 
     transform disappear(time = 1.0, delay = 0.0):
-        alpha 1
+        alpha 1.0
         pause delay
-        linear time alpha 0
+        linear time alpha 0.0
 
     transform _shake(time = 1.0, delay = 0.0):
         xoffset 0
