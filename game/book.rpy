@@ -75,8 +75,9 @@ label start_book:
     with fade
 
     show book_logo:
-        pos (0.30, 0.35)
+        pos (0.30, 0.32)
         anchor (0.5, 0.5)
+        zoom 0.8
 
     $ book_nvl_mode = True
 

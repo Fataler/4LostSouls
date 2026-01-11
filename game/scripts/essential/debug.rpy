@@ -126,7 +126,6 @@ init -1 python:
         for style_name in known_styles:
             try:
                 s = getattr(style, style_name)
-                # Check if it has foreground property (indicating it's a real style)
                 if hasattr(s, 'foreground'):
                     style_names.append(style_name)
             except Exception as e:
@@ -162,7 +161,6 @@ init -1 python:
                     log_debug(f"[DebugBounds] skip {sname}: {e}")
                     continue
         else:
-            # Revert foregrounds
             for sname, fg in list(_bounds_saved_foregrounds.items()):
                 try:
                     getattr(style, sname).foreground = fg
@@ -204,7 +202,6 @@ screen debug_bounds_overlay():
         python:
             displayables = []
             try:
-                # Method 2: Try scene lists if method 1 didn't work
                 if not displayables:
                     try:
                         from renpy.display.core import scene_lists

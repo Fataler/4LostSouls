@@ -29,6 +29,17 @@ init -1:
             pause 0.5
             repeat
 
+    transform candle_pulsation_alpha:
+        alpha 1.0
+        ease 0.8 alpha 1.0
+        ease 1.2 alpha 0.60
+        ease 1.0 alpha 0.75
+        ease 1.5 alpha 1.0
+        ease 0.9 alpha 0.70
+        ease 1.3 alpha 1.0
+        pause 0.5
+        repeat
+
     transform appear(time = 1.0, delay = 0.0):
         alpha 0.0
         pause delay
