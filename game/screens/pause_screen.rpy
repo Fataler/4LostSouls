@@ -14,18 +14,13 @@ screen pause_menu(from_game_menu=False):
     $ elements_apperar_time = 2.0 if not from_game_menu else 1.0
     
     add "bg_black"
-    
-    frame:
-        background None
-        
-        add "bg_black"
-        add Parallax("menu_fon", 0.5)
+    add "menu_fon"
 
     frame:
         style_prefix "pause_menu"
         background None #"#00000080"
         xanchor 0.5
-        xpos 0.83
+        xpos 0.20
 
         # Кнопки меню
         vbox at pause_menu_items_appear:
