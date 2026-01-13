@@ -11,12 +11,12 @@ init python:
         """Показывает изображение в книге на противоположной от текста стороне."""
         # Если текст слева, картинка справа и наоборот
         if store.book_page_side == "left":
-            pos_transform = store.book_img_right
+            pos_transform = book_img_right()
         else:
-            pos_transform = store.book_img_left
+            pos_transform = book_img_left()
             
         store.book_current_img = img_name
-        renpy.show(img_name, at_list=[store.book_masked(), pos_transform])
+        renpy.show(img_name, at_list=[book_masked(), pos_transform])
         renpy.with_statement(dissolve)
 
     def book_clear():
@@ -84,7 +84,7 @@ label start_book:
     # p 1
     $ book_page_side = "left"
     $ book_page_stanzas = 3
-    $ show_book_img("scene_01_02")
+    $ show_book_img("scene_1_image")
 
     book_nvl "{vspace=300}В последний вечер декабря,\nКогда Москва в огнях тонула,\nИ, светом праздничным горя,\nЗима в проулках прикорнула," 
     book_nvl "Шла Лада по тропе одна,\nМинуя людные кварталы.\nЕй не нужна была толпа,\nОна от праздника устала."

@@ -82,18 +82,12 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
 
     textbutton _("Назад"):
         style "return_button"
-        action (
-            ShowMenu(MAIN_MENU_SCREEN, from_game_menu=True)
-            if main_menu
-            else [
-                Return() if not came_from_pause_menu else [SetVariable("came_from_pause_menu", False), ShowMenu(PAUSE_MENU_SCREEN, from_game_menu=True)]
-            ]
-        )
+        action If(main_menu, ShowMenu(MAIN_MENU_SCREEN, from_game_menu=True), Return())
 
     if main_menu:
         key "game_menu" action ShowMenu(MAIN_MENU_SCREEN, from_game_menu=True)
     else:
-        key "game_menu" action (Return() if not came_from_pause_menu else [SetVariable("came_from_pause_menu", False), ShowMenu(PAUSE_MENU_SCREEN, from_game_menu=True)])
+        key "game_menu" action Return()
 
 
 style game_menu_outer_frame is empty:

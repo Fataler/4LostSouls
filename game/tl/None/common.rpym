@@ -1,6 +1,10 @@
 ﻿
 translate None strings:
 
+    # game/configs/options.rpy:15
+    old "Four Lost Souls"
+    new "Четыре брошенных души"
+
     # renpy/common/00accessibility.rpy:28
     old "Self-voicing disabled."
     new "Синтезатор речи отключён."
