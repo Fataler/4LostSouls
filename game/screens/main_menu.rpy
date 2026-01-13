@@ -1,5 +1,5 @@
 image menu_svet = "gui/menu/Menu_2_svet.png"
-image menu_bg = "gui/menu/Menu_1.png"
+image menu_fon = "gui/menu/Menu_1.png"
 image menu_okno = "gui/menu/Menu_2_okno.png"
 
 image menu_logo = "gui/menu/logo_white.png"
@@ -12,10 +12,10 @@ screen main_menu(from_game_menu=False):
         
     add "bg_black"
     add "menu_okno"
-    add "main_menu_snow":
+    add "snow_image":
         pos (900, 0)
 
-    add "menu_bg"
+    add "menu_fon"
 
     add "menu_svet" at candle_pulsation_alpha
 

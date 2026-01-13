@@ -57,7 +57,7 @@ style say_window:
     align (0.5, 0.98)
     xpadding 10
     ypadding 10
-    background Frame(textbox_style, Borders(0,0, 0, 0), tile=False) #textbox_style
+    background None #textbox_style
     yminimum 240
     xfill False
     yfill False

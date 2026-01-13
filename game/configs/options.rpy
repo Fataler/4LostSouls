@@ -12,7 +12,7 @@
 ##
 ## Символы "_()", окружающие название, отмечают его как пригодное для перевода.
 
-define config.name = _("BEyONd thE event horizon")
+define config.name = _("Four Lost Souls")
 define config.image_cache_size_mb = 512
 
 define config.developer = True

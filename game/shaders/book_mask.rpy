@@ -47,8 +47,8 @@ init -2 python:
             vec2 p = abs(uv - 0.5);
             float d = max(p.x, p.y);
 
-            float edge = u_mask_base + (n - 0.5) * u_mask_noise;
-            float mask = smoothstep(edge, edge - u_mask_edge, d);
+            float safe_edge = clamp(u_mask_base + (n - 0.5) * u_mask_noise, 0.1, 0.48);
+            float mask = smoothstep(safe_edge, safe_edge - u_mask_edge, d);
 
             vec4 c = texture2D(tex0, uv, u_lod_bias);
             float a = c.a * mask;
@@ -57,11 +57,11 @@ init -2 python:
     )
 
 transform book_masked(
-    scale=2.0,
-    speed=0.09,
-    base=0.50,
-    noise=0.08,
-    edge=0.09
+    scale=12.0,
+    speed=0.1,
+    base=0.48,
+    noise=0.15,
+    edge=0.1
 ):
     mesh True
     shader "fx.book_mask"
