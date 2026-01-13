@@ -7,29 +7,19 @@
 ## экран предназначен для использования с одним или несколькими дочерними
 ## элементами, которые трансклюдируются (помещаются) внутрь него.
 
-transform menu_move:
-    pause 0.3
-    parallel:
-        ease 0.5 xoffset -390
-
 screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
     
     style_prefix "game_menu"
-    add "bg_black"
 
-    frame:
-        background None
-        at menu_move
-        
-        add "bg_black"
-        add Parallax("menu_fon", 0.5)
-        add Parallax("menu_fon_2", 0.5)
+    add "menu_okno"
+    add "snow_image":
+        pos (900, 0)
 
-        add Parallax("menu_nimb", 1)at transform:
-            alpha 1.0
-            linear 2.0 alpha 0.5
-            linear 2.0 alpha 1.0
-            repeat
+    add "menu_fon"
+    add "menu_svet" at candle_pulsation_alpha
+
+    add "bg_black_t_30"
+
 
     frame at menu_items_appear:
         top_margin 15

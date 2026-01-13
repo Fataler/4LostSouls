@@ -46,7 +46,7 @@ screen menu_button():
         action [Function(toggle_game_menu)]
         at hover_scale
 
-    key "game_menu" action ShowMenu("pause_menu")
+    # key "game_menu" action ShowMenu("pause_menu")
 
 # Выезжающая панель с кнопками
 screen game_menu_panel():

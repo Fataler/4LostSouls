@@ -29,14 +29,13 @@ init -1:
             pause 0.5
             repeat
 
-    transform candle_pulsation_alpha:
-        alpha 1.0
+    transform candle_pulsation_alpha(smooth = True):
+        alpha (0.0 if smooth else 1.0)
+        ease (1.0 if smooth else 0.0) alpha 1.0
         ease 0.8 alpha 1.0
-        ease 1.2 alpha 0.60
-        ease 1.0 alpha 0.75
-        ease 1.5 alpha 1.0
-        ease 0.9 alpha 0.70
-        ease 1.3 alpha 1.0
+        ease 1.0 alpha 0.70
+        ease 0.8 alpha 0.5
+        ease 1.0 alpha 0.0
         pause 0.5
         repeat
 
@@ -85,6 +84,29 @@ init -1:
             ease 0.25 alpha opac
         on idle:
             ease 0.25 alpha 0.0 blend "add"
+
+    transform magic_star_particle(x_dist, y_dist, delay_time, duration=3.0):
+        subpixel True
+        alpha 0.0 xoffset 0 yoffset 0
+        pause delay_time
+        block:
+            parallel:
+                ease duration * 0.4 alpha 1.0
+                ease duration * 0.6 alpha 0.0
+            parallel:
+                linear duration xoffset x_dist yoffset y_dist
+            alpha 0.0 xoffset 0 yoffset 0
+            repeat
+
+    transform cinematic_focus(x=0.5, y=0.5, target_zoom=1.2, duration=3.0):
+        subpixel True
+        zoom 1.0 anchor (0.5, 0.5) pos (0.5, 0.5)
+        ease duration zoom target_zoom anchor (x, y)
+
+    transform cinematic_focus_out(x=0.5, y=0.5, start_zoom=1.2, duration=3.0):
+        subpixel True
+        zoom start_zoom anchor (x, y) pos (0.5, 0.5)
+        ease duration zoom 1.0 anchor (0.5, 0.5)
 
     transform move_by_circle(cx=0.5, cy=0.5, radius=100, duration=2.0, start_angle=0.0, clockwise=True):
         xpos cx

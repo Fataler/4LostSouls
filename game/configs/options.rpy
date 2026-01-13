@@ -41,17 +41,15 @@ define config.mouse = { 'default' : [ ("gui/Cursor.png", 0, 0)], 'inspect' : [ (
 ## Для отделения абзацев оставляйте между ними пустую строку.
 
 define gui.about = _p("""
-Визуальная новелла разработана в рамках игрового джема {a=%(jam)s}Джем ста цветов 2025{/a} 
+Визуальная новелла разработана в рамках игрового джема {a=%(jam)s}Капелла Jam 3 2026{/a} 
 
-Дата релиза: 01.09.2025
+Дата релиза: 17.01.2026
 
 Использованные сторонние ресурсы лежат в файле {i}external_resources.txt{/i}.
-Музыка сделана с помощью нейросети {a=https://suno.com}https://suno.com.{/a}
 
 Авторы: \n
-{w=0}     - Featharine ({a=https://vk.com/sweet_sour_figures}ВК{/a}) - сценарий, концепт, персонажи, CG, UI, музыка\n
-{w=0}     - Fataler ({a=https://steamcommunity.com/id/fataler}Steam{/a}) - код, мини-игры, редактура, анимации\n
-{w=0}     - Kapushishin ({a=https://steamcommunity.com/id/Kapushishin}Steam{/a}) - фоны, сборка новеллы, сбор референсов, режиссура, звуки\n
+{w=0}     - Featharine ({a=https://vk.com/sweet_sour_figures}ВК{/a}) - концепт, персонажи, CG, UI, музыка\n
+{w=0}     - Fataler ({a=https://steamcommunity.com/id/fataler}Steam{/a}) - сценарий, код, редактура, анимации\n
 """% {"jam": URL_JAM})
 
 

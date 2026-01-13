@@ -65,7 +65,6 @@ screen quick_menu():
                         background None
                     tooltip _("Откат")
 
-                # 2. Сохранить
                 button:
                     area (110, 235, 80, 45)
                     action ShowMenu('save')
@@ -75,7 +74,6 @@ screen quick_menu():
                         background None
                     tooltip _("Сохранить")
 
-                # 3. Загрузить
                 button:
                     area (90, 280, 80, 45)
                     action ShowMenu('load')
@@ -85,7 +83,6 @@ screen quick_menu():
                         background None
                     tooltip _("Загрузить")
 
-                # 4. Настройки
                 button:
                     area (70, 325, 80, 45)
                     action ShowMenu('preferences')
@@ -95,7 +92,6 @@ screen quick_menu():
                         background None
                     tooltip _("Настройки")
 
-                # 5. Авточтение
                 button:
                     area (50, 370, 80, 45)
                     action Preference("auto-forward", "toggle")
@@ -105,7 +101,6 @@ screen quick_menu():
                         background None
                     tooltip _("Авточтение")
 
-                # 6. Выход в меню
                 button:
                     area (50, 415, 80, 45)
                     action MainMenu()
@@ -115,7 +110,6 @@ screen quick_menu():
                         background None
                     tooltip _("В меню")
 
-                # 7. Закрыть (Свернуть ленту)
                 button:
                     area (50, 460, 80, 45)
                     action SetField(q_state, "open", False)
@@ -131,8 +125,11 @@ screen quick_menu():
                 focus "tooltip"
                 prefer_top True
                 has frame padding 15,15,15,15
-                background Solid("#000000cc")
+                background Solid("#00000056")
                 text tooltip style "tooltip"
+
+        # Перехватываем ESC (game_menu), чтобы вместо меню паузы открывать ленту
+        key "game_menu" action ToggleField(q_state, "open")
 
 init python:
     if "quick_menu" not in config.overlay_screens:

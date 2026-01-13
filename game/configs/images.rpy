@@ -78,19 +78,19 @@ image bg_menu_main = "gui/menu/bg.png"
 
 ## Эффекты
 transform darken:
-    matrixcolor TintMatrix("#000000") * ColorMatrix(1.0, 1.0, 1.0, 0.7)
+    matrixcolor TintMatrix("#000000") * OpacityMatrix(0.7)
 
 transform lighten:
-    matrixcolor TintMatrix("#ffffff") * ColorMatrix(1.0, 1.0, 1.0, 0.7)
+    matrixcolor TintMatrix("#eef13a") * OpacityMatrix(0.3)
 
 # Анимированное затемнение
 transform fade_to_dark:
-    linear 1.0 matrixcolor TintMatrix("#000000") * ColorMatrix(1.0, 1.0, 1.0, 0.0)
-    linear 1.0 matrixcolor TintMatrix("#000000") * ColorMatrix(1.0, 1.0, 1.0, 0.7)
+    linear 1.0 matrixcolor TintMatrix("#000000") * OpacityMatrix(0.0)
+    linear 1.0 matrixcolor TintMatrix("#000000") * OpacityMatrix(0.7)
 
 # Анимированное осветление
 transform fade_to_light:
-    linear 1.0 matrixcolor TintMatrix("#000000") * ColorMatrix(1.0, 1.0, 1.0, 0.7)
-    linear 1.0 matrixcolor TintMatrix("#000000") * ColorMatrix(1.0, 1.0, 1.0, 0.0)
+    linear 1.0 matrixcolor TintMatrix("#000000") * OpacityMatrix(0.7)
+    linear 1.0 matrixcolor TintMatrix("#000000") * OpacityMatrix(0.0)
 
 
