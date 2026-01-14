@@ -8,8 +8,6 @@ default book_page_stanzas = 2
 
 init python:
     def show_book_img(img_name):
-        """Показывает изображение в книге на противоположной от текста стороне."""
-        # Если текст слева, картинка справа и наоборот
         if store.book_page_side == "left":
             pos_transform = book_img_right()
         else:
@@ -20,47 +18,11 @@ init python:
         renpy.with_statement(dissolve)
 
     def book_clear():
-        """Очищает NVL-текст и скрывает текущее изображение с растворением."""
         if store.book_current_img:
             renpy.hide(store.book_current_img)
             store.book_current_img = None
         nvl_clear()
         renpy.with_statement(dissolve)
-
-image ilustration_cat = Transform("cat_jump.png", xsize=600, ysize=800)
-image illustration_cat_angry = Transform("cat_angry.png", xsize=600, ysize=800)
-image illustration_girl = Transform("girl.png", xsize=600, ysize=800)
-image illustration_girl_room = Transform("sсene2_3.jpg", xsize=600, ysize=800)
-image illustration_lonely = Transform("images/illustrations/scene_02_01.png", xsize=600, ysize=800)
-image scene_01_02 = Transform("images/illustration_2/2/2.png", xsize=600, ysize=800)
-
-image illustration_cat_angry_small = Transform("cat_angry.png", xsize=600, ysize=300)
-image scene_01_01 = Transform("images/illustrations/scene_01_01.png", xsize=600, ysize=800)
-image scene_02_01 = Transform("images/illustrations/scene_02_01.png", xsize=600, ysize=800)
-image scene_02_02 = Transform("images/illustrations/scene_02_02.png", xsize=600, ysize=600)
-image scene_03_01 = Transform("images/illustrations/scene_03_01.png", xsize=600, ysize=500)
-image scene_04_01 = Transform("images/illustrations/scene_04_01.png", xsize=600, ysize=800)
-image scene_05_01 = Transform("images/illustrations/scene_05_01.png", xsize=600, ysize=800)
-image scene_06_01 = Transform("images/illustrations/scene_06_01.png", xsize=600, ysize=450)
-image scene_07_01 = Transform("images/illustrations/scene_07_01.png", xsize=600, ysize=800)
-image scene_08_01 = Transform("images/illustrations/scene_08_01.png", xsize=600, ysize=800)
-image scene_10_01 = Transform("images/illustrations/scene_10_01.png", xsize=600, ysize=800)
-image scene_11_01 = Transform("images/illustrations/scene_11_01.png", xsize=600, ysize=800)
-image scene_12_01 = Transform("images/illustrations/scene_12_01.png", xsize=600, ysize=800)
-image scene_13_01 = Transform("images/illustrations/scene_13_01.png", xsize=600, ysize=800)
-image scene_14_01 = Transform("images/illustrations/scene_14_01.png", xsize=600, ysize=800)
-image scene_15_01 = Transform("images/illustrations/scene_15_01.png", xsize=600, ysize=800)
-image scene_16_01 = Transform("images/illustrations/scene_16_01.png", xsize=600, ysize=800)
-image scene_17_01 = Transform("images/illustrations/scene_17_01.png", xsize=600, ysize=800)
-image scene_18_01 = Transform("images/illustrations/scene_18_01.png", xsize=600, ysize=800)
-image scene_19_01 = Transform("images/illustrations/scene_19_01.png", xsize=600, ysize=800)
-image scene_20_01 = Transform("images/illustrations/scene_20_01.png", xsize=600, ysize=800)
-image scene_21_01 = Transform("images/illustrations/scene_21_01.png", xsize=600, ysize=800)
-image scene_23_01 = Transform("images/illustrations/scene_23_01.png", xsize=600, ysize=800)
-image scene_25_01 = Transform("images/illustrations/scene_25_01.png", xsize=600, ysize=800)
-image scene_26_01 = Transform("images/illustrations/scene_26_01.png", xsize=600, ysize=800)
-image scene_29_01 = Transform("images/illustrations/scene_29_01.png", xsize=600, ysize=800)
-image scene_31_01 = Transform("images/illustrations/scene_31_01.png", xsize=600, ysize=800)
 
 label start_book:
     scene black

@@ -29,14 +29,22 @@ init -1:
             pause 0.5
             repeat
 
-    transform candle_pulsation_alpha(smooth = True):
-        alpha (0.0 if smooth else 1.0)
-        ease (1.0 if smooth else 0.0) alpha 1.0
+    transform candle_pulsation_alpha(delay = 0.0, clamp_alpha = 0.5):
+        pause delay
+        alpha clamp_alpha
+        ease 1.0 alpha 1.0
         ease 0.8 alpha 1.0
         ease 1.0 alpha 0.70
-        ease 0.8 alpha 0.5
-        ease 1.0 alpha 0.0
+        ease 1.0 alpha clamp_alpha
         pause 0.5
+        repeat
+
+    transform offset_animated(x_offset = 0, y_offset = 0, time = 1.0):
+        subpixel True
+        xoffset 0
+        yoffset 0
+        ease time xoffset x_offset yoffset y_offset
+        ease time xoffset 0 yoffset 0
         repeat
 
     transform appear(time = 1.0, delay = 0.0):

@@ -1,6 +1,6 @@
 image bg_book_shelf = "images/BookShelf/BookShelf.png"
 image book_shelf_button = "images/BookShelf/Book.png"
-image book_shelf_stars = At(Transform("images/BookShelf/Stars.png"), candle_pulsation_alpha(smooth=True))
+image book_shelf_stars = At(Transform("images/BookShelf/Stars.png"), candle_pulsation_alpha())
 
 screen book_shelf_screen():
     default is_hovered = False

@@ -1,53 +1,77 @@
 # region scene_1
 layeredimage scene_1_image:
-    size (600, 800)
+    at Transform(crop=(0, 0, 900, 1200), size=(600, 800), subpixel=True)
     always:
         "illustrations/1/Hover.png"
     always:
-        "illustrations/1/Hover_Lada.png"
+        image:
+            "illustrations/1/Hover_Lada.png"
+        at delay_appear(delay = 1.0, time = 1.0)
     always:
         image:
             "illustrations/1/Hover_stars.png"
-        at candle_pulsation_alpha
+        #at , 
+        at candle_pulsation_alpha(delay = 0.0), offset_animated(x_offset = 5, y_offset = 5, time = 3.0)
+        blend "add"
     always:
         image:
             "illustrations/1/Hover_blesk.png"
-        at candle_pulsation_alpha
+        at offset_animated(x_offset = 4, y_offset = -4, time = 2.0)
     always:
         "snow_image"
 # endregion
 
 # region scene_2
 layeredimage scene_2_image:
-    size (600, 800)
+    at Transform(crop=(0, 0, 900, 1200), size=(600, 800), subpixel=True)
     always:
         "illustrations/2/fon.png"
     always:
-        "illustrations/2/2_Lada.png"
+        image:
+            "illustrations/2/2_Lada.png"
+        at offset_animated(x_offset = 0, y_offset = 10, time = 2.0)
     always:
         "illustrations/2/2_svet.png"
     always:
-        "illustrations/2/2_svet_2.png"
+        image:
+            "illustrations/2/2_svet_2.png"
+        at candle_pulsation_alpha(delay = 0.0), offset_animated(x_offset = 5, y_offset = 5, time = 3.0)
 # endregion
 
 # region scene_3
+transform scene_3_lada_move:
+    subpixel True
+    xoffset 0
+    yoffset 0
+    # pause 1.0
+    # linear 0.5 alpha 0.0
+    # xoffset 160
+    # zoom 0.8
+    linear 0.5 alpha 1.0
+
+image lada_3 = "illustrations/3/Lada.png"
+
 layeredimage scene_3_image:
-    size (600, 800)
+    at Transform(crop=(0, 0, 900, 1200), size=(600, 800), subpixel=True)
     always:
-        "illustrations/3/3_0003_Слой-изображения.png"
+        "illustrations/3/Fon.png"
     always:
-        "illustrations/3/3_0002_Слой-изображения.png"
+        image:
+            "illustrations/3/Lada.png"
+        at scene_3_lada_move
     always:
-        "illustrations/3/3_0001_Пиксельный-слой.png"
+        "illustrations/3/svet2.png"
     always:
-        "illustrations/3/3_0000_Пиксельный-слой.png"
-    always:
-        "snow_image"
+        image:
+            "illustrations/3/svet1.png"
+        at candle_pulsation_alpha(delay = 0.0), offset_animated(x_offset = 5, y_offset = 15, time = 2.0)
+    # always:
+    #     "snow_image"
 # endregion
 
 # region scene_4
 layeredimage scene_4_image:
-    size (600, 800)
+    at Transform(crop=(0, 0, 900, 1200), size=(600, 800), subpixel=True)
     always:
         "illustrations/4/4_0005_fon.png"
     always:
@@ -66,7 +90,7 @@ layeredimage scene_4_image:
 
 # region scene_5
 layeredimage scene_5_image:
-    size (600, 800)
+    at Transform(crop=(0, 0, 900, 1200), size=(600, 800), subpixel=True)
     always:
         "illustrations/5/5_0004_Пиксельный-слой.png"
     always:
@@ -83,7 +107,7 @@ layeredimage scene_5_image:
 
 # region scene_7
 layeredimage scene_7_image:
-    size (600, 800)
+    at Transform(crop=(0, 0, 900, 1200), size=(600, 800), subpixel=True)
     always:
         "illustrations/7/fon.png"
     always:
@@ -98,7 +122,7 @@ layeredimage scene_7_image:
 
 # region scene_8
 layeredimage scene_8_image:
-    size (600, 800)
+    at Transform(crop=(0, 0, 900, 1200), size=(600, 800), subpixel=True)
     always:
         "illustrations/8/8.png"
     always:
@@ -118,7 +142,7 @@ layeredimage scene_8_image:
 
 # region scene_10
 layeredimage scene_10_image:
-    size (600, 800)
+    at Transform(crop=(0, 0, 900, 1200), size=(600, 800), subpixel=True)
     always:
         "illustrations/10/fon.png"
     always:
@@ -127,7 +151,7 @@ layeredimage scene_10_image:
 
 # region scene_14
 layeredimage scene_14_image:
-    size (600, 800)
+    at Transform(crop=(0, 0, 900, 1200), size=(600, 800), subpixel=True)
     always:
         "illustrations/14/14_0003_Пиксельный-слой.png"
     always:
@@ -140,7 +164,7 @@ layeredimage scene_14_image:
 
 # region scene_19
 layeredimage scene_19_image:
-    size (600, 800)
+    at Transform(crop=(0, 0, 900, 1200), size=(600, 800), subpixel=True)
     always:
         "illustrations/19/fon.png"
     always:
@@ -159,7 +183,7 @@ layeredimage scene_19_image:
 
 # region scene_20
 layeredimage scene_20_image:
-    size (600, 800)
+    at Transform(crop=(0, 0, 900, 1200), size=(600, 800), subpixel=True)
     always:
         "illustrations/20/fon.png"
     always:
@@ -174,7 +198,7 @@ layeredimage scene_20_image:
 
 # region scene_24
 layeredimage scene_24_image:
-    size (600, 800)
+    at Transform(crop=(0, 0, 900, 1200), size=(600, 800), subpixel=True)
     always:
         "illustrations/24/24.png"
     always:
@@ -183,7 +207,7 @@ layeredimage scene_24_image:
 
 # region scene_25
 layeredimage scene_25_image:
-    size (600, 800)
+    at Transform(crop=(0, 0, 900, 1200), size=(600, 800), subpixel=True)
     always:
         "illustrations/25/fon.png"
     always:
@@ -216,7 +240,7 @@ layeredimage scene_25_image:
 
 # region scene_26
 layeredimage scene_26_image:
-    size (600, 800)
+    at Transform(crop=(0, 0, 900, 1200), size=(600, 800), subpixel=True)
     always:
         "illustrations/26/fon.png"
     always:
