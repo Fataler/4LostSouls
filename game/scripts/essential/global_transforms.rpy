@@ -57,17 +57,19 @@ init -1:
         pause delay
         linear time alpha 0.0
 
-    transform _shake(time = 1.0, delay = 0.0):
+    transform _shake(force_x = 10.0, speed = 0.1, do_repeat = False):
+        subpixel True
         xoffset 0
         yoffset 0
-        parallel:
-            linear 0.1 xoffset 10
-            pause 0.1
-            linear 0.1 xoffset -10
-            pause 0.1
-            linear 0.1 xoffset 10
-            pause 0.1
-            linear 0.1 xoffset 0
+        block:
+            linear speed xoffset force_x
+            pause speed
+            linear speed xoffset -force_x
+            pause speed
+            linear speed xoffset force_x
+            pause speed
+            linear speed xoffset 0
+            repeat (1000 if do_repeat else 0)
 
     transform crt:
         parallel:

@@ -43,10 +43,16 @@ transform scene_3_lada_move:
     subpixel True
     xoffset 0
     yoffset 0
-    # pause 1.0
-    # linear 0.5 alpha 0.0
-    # xoffset 160
-    # zoom 0.8
+    pause 1.0
+    linear 0.5 alpha 0.0
+    xoffset 160
+    zoom 0.8
+    linear 0.5 alpha 1.0
+    pause 1.0
+    linear 0.5 alpha 0.0
+    xoffset 320
+    yoffset 300
+    zoom 0.4
     linear 0.5 alpha 1.0
 
 image lada_3 = "illustrations/3/Lada.png"
@@ -75,15 +81,24 @@ layeredimage scene_4_image:
     always:
         "illustrations/4/4_0005_fon.png"
     always:
-        "illustrations/4/4_0004_juvnost.png"
+        image:
+            "illustrations/4/4_0004_juvnost.png"
+        at _shake(force_x = 3.0, speed = 0.08, do_repeat = True)
     always:
-        "illustrations/4/4_0003_sneg_snizu.png"
+        image:
+            "illustrations/4/4_0003_sneg_snizu.png"
     always:
-        "illustrations/4/4_0002_svet2.png"
+        image:
+            "illustrations/4/4_0002_svet2.png"
+        at candle_pulsation_alpha(delay = 0.0), offset_animated(x_offset = 5, y_offset = 5, time = 3.0)
     always:
-        "illustrations/4/4_0001_svet.png"
+        image:
+            "illustrations/4/4_0001_svet.png"
+        at candle_pulsation_alpha(delay = 0.3), offset_animated(x_offset = 5, y_offset = 5, time = 3.0)
     always:
-        "illustrations/4/4_0000_sneg.png"
+        image:
+            "illustrations/4/4_0000_sneg.png"
+        at candle_pulsation_alpha(delay = 0.6), offset_animated(x_offset = 5, y_offset = 5, time = 3.0)
     always:
         "snow_image"
 # endregion
@@ -96,11 +111,16 @@ layeredimage scene_5_image:
     always:
         "illustrations/5/5_0003_Пиксельный-слой.png"
     always:
-        "illustrations/5/5_0002_Пиксельный-слой.png"
+        image:
+            "illustrations/5/5_0002_Пиксельный-слой.png"
+        at candle_pulsation_alpha(delay = 0.0), offset_animated(x_offset = 5, y_offset = 5, time = 3.0)
     always:
-        "illustrations/5/5_0001_Пиксельный-слой.png"
+        image:
+            "illustrations/5/5_0001_Пиксельный-слой.png"
+        at candle_pulsation_alpha(delay = 0.0), offset_animated(x_offset = 5, y_offset = 5, time = 3.0)
     always:
-        "illustrations/5/5_0000_Пиксельный-слой.png"
+        image:
+            "illustrations/5/5_0000_Пиксельный-слой.png"
     always:
         "snow_image"
 # endregion
@@ -113,30 +133,45 @@ layeredimage scene_7_image:
     always:
         "illustrations/7/stars.png"
     always:
-        "illustrations/7/sneg.png"
+        image:
+            "illustrations/7/sneg.png"
+        at candle_pulsation_alpha(delay = 0.0), offset_animated(x_offset = 5, y_offset = 5, time = 3.0)
     always:
-        "illustrations/7/jmih.png"
+        image:
+            "illustrations/7/jmih.png"
+        at candle_pulsation_alpha(delay = 0.0), offset_animated(x_offset = 5, y_offset = 5, time = 3.0)
     always:
         "snow_image"
 # endregion
 
 # region scene_8
+define time_tiktok = 1.5
+
 layeredimage scene_8_image:
     at Transform(crop=(0, 0, 900, 1200), size=(600, 800), subpixel=True)
     always:
         "illustrations/8/8.png"
     always:
-        "illustrations/8/8_dver.png"
+        image:
+            "illustrations/8/8_dver.png"
+            pause 2.0
+            linear 0.5 alpha 0.0
     always:
         "illustrations/8/8_svet.png"
     always:
         image:
+            linear 0.2 alpha 0.0
             "illustrations/8/8_tiktok_1.png"
-            pause 0.2
+            linear 0.2 alpha 1.0
+            pause time_tiktok
+            linear 0.2 alpha 0.0
             "illustrations/8/8_tiktok_2.png"
-            pause 0.2
+            linear 0.2 alpha 1.0
+            pause time_tiktok
+            linear 0.2 alpha 0.0
             "illustrations/8/8_tiktok_3.png"
-            pause 0.2
+            linear 0.2 alpha 1.0
+            pause time_tiktok
             repeat
 # endregion
 
@@ -146,7 +181,9 @@ layeredimage scene_10_image:
     always:
         "illustrations/10/fon.png"
     always:
-        "illustrations/10/alo.png"
+        image:
+            "illustrations/10/alo.png"
+        at hue_cycle(time = 3.0)
 # endregion
 
 # region scene_14
@@ -155,11 +192,15 @@ layeredimage scene_14_image:
     always:
         "illustrations/14/14_0003_Пиксельный-слой.png"
     always:
-        "illustrations/14/14_0002_girlanda.png"
+        image:
+            "illustrations/14/14_0002_girlanda.png"
+        at hue_cycle(time = 3.0)
     always:
         "illustrations/14/14_0001_jmih.png"
     always:
-        "illustrations/14/14_0000_stars.png"
+        image:
+            "illustrations/14/14_0000_stars.png"
+        at candle_pulsation_alpha(delay = 0.0), offset_animated(x_offset = 5, y_offset = 5, time = 3.0)
 # endregion
 
 # region scene_19
@@ -168,6 +209,10 @@ layeredimage scene_19_image:
     always:
         "illustrations/19/fon.png"
     always:
+        image:
+            "illustrations/19/kisli.png"
+        at _shake(force_x = 1.0, speed = 0.08, do_repeat = True)
+    always:
         "illustrations/19/sneg_melkiy.png"
     always:
         "illustrations/19/sneg.png"
@@ -175,8 +220,6 @@ layeredimage scene_19_image:
         "illustrations/19/svet.png"
     always:
         "illustrations/19/svet2.png"
-    always:
-        "illustrations/19/kisli.png"
     always:
         "snow_image"
 # endregion
@@ -187,13 +230,20 @@ layeredimage scene_20_image:
     always:
         "illustrations/20/fon.png"
     always:
-        "illustrations/20/girlanda.png"
+        image:
+            "illustrations/20/kisli.png"
+        at offset_animated(x_offset = 0, y_offset = 6, time = 3.0)
     always:
-        "illustrations/20/svet1.png"
+        image:
+            "illustrations/20/girlanda.png"
+        at hue_cycle(time = 3.0)
     always:
-        "illustrations/20/svet2.png"
+        image:
+            "illustrations/20/svet1.png"
     always:
-        "illustrations/20/kisli.png"
+        image:
+            "illustrations/20/svet2.png"
+        at  hue_cycle(time = 3.0)# candle_pulsation_alpha(delay = 0.0), offset_animated(x_offset = 5, y_offset = 5, time = 3.0)
 # endregion
 
 # region scene_24
