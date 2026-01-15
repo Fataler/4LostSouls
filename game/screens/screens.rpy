@@ -176,9 +176,11 @@ style confirm_prompt_text is gui_prompt_text
 style confirm_button is gui_medium_button
 style confirm_button_text is gui_medium_button_text
 
+image confirm_frame_bg = Frame("gui/frame_achievement.png", gui.confirm_frame_borders, tile=gui.frame_tile)
+
 style confirm_frame:
-    background Frame([ "gui/frame_achievement.png"], gui.confirm_frame_borders, tile=gui.frame_tile)
-    padding gui.confirm_frame_borders.padding
+    background "confirm_frame_bg"
+    padding (50, 50)
     xalign .5
     yalign .5
     minimum (700, 250)

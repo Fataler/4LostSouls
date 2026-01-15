@@ -1,5 +1,6 @@
 image menu_svet = "gui/menu/Menu_2_svet.png"
 image menu_fon = "gui/menu/Menu_1.png"
+image menu_fon_completed = "gui/menu/Menu_1_completed.png"
 image menu_okno = "gui/menu/Menu_2_okno.png"
 
 image menu_logo = "gui/menu/logo_white.png"
@@ -15,7 +16,10 @@ screen main_menu(from_game_menu=False):
     add "snow_image":
         pos (900, 0)
 
-    add "menu_fon"
+    if persistent.game_completed:
+        add "menu_fon_completed"
+    else:
+        add "menu_fon"
 
     add "menu_svet" at candle_pulsation_alpha
 

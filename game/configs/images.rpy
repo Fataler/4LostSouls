@@ -28,32 +28,19 @@ image book_logo = "images/Book/logo_black.png"
 
 
 # credits images
-image logo_short:
-    "gui/menu/Logo_short.png"
-    matrixcolor BrightnessMatrix(-0.3)
+image credits_bg:
+    "images/Credits/Credits.png"
 
 image credits_img_1:
-    "images/Credits/1.jpg"
+    "images/Credits/1.png"
 image credits_img_2:
     "images/Credits/2.png"
 image credits_img_3:
-    "images/Credits/3.jpg"
+    "images/Credits/3.png"
 image credits_img_4:
-    "images/Credits/4_1.jpg"
-    0.3
-    "images/Credits/4_2.jpg"
-    0.3
-    "images/Credits/4_3.jpg"
-    0.3
-    "images/Credits/4_2.jpg"
-    0.3   
-    repeat
+    "images/Credits/4.png"
 image credits_img_5:
-    "images/Credits/5.jpg"
-image credits_img_6:
-    "images/Credits/6.jpg"
-image credits_img_7:
-    "images/Credits/7.jpg"
+    "images/Credits/5.png"
 
 ## Общие изображения
 image bg_black = Solid("#000")

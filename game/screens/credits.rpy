@@ -1,4 +1,4 @@
-define credits_duration = 70.0
+define credits_duration = 60#40.0
 
 init python:    
     class Credits(renpy.Displayable):
@@ -47,34 +47,39 @@ screen credits():
     default skip_fading = False
     default skip_time = 0.0
     default credits_obj = Credits(
-"""{image=logo_short}
+"""{image=menu_logo}
+
 
 {size=65}{i}Команда:{/i}{/size}
 
-
-{size=45}{b}{k=5}Featharine{/k}{/b}{/size}
-оригинальная идея
-лидер
-сценарий
-персонажи
-CG
-дизайн UI
-музыка
-
 {size=45}{b}{k=5}Fataler{/k}{/b}{/size}
+оригинальная идея
 код
-мини игры
 верстка
 анимации
+музыка и звуки
+
+{size=45}{b}{k=5}Featharine{/k}{/b}{/size}
+редактура
+CG
+дизайн UI
+музыка и звуки
 
 
 {size=65}{i}Отдельная 
 благодарность:{/i}{/size}
 
-{size=45}{b}{k=5}Коты Тигр и Лиса{/k}{/b}{/size}
 
+{image=credits_img_5}
+
+{size=45}{b}{k=5}Коты Тигр и Лиса{/k}{/b}{/size}
 катание по клавиатуре
 моральная поддержка
+
+{image=credits_img_2} {image=credits_img_3}
+
+
+
 
 
 
@@ -88,29 +93,9 @@ CG
         yfill True
         at show_screen_transform(show_time=1.0, hide_time=1.0)
 
-        add "bg_black":
+        add "credits_bg":
             alpha 0.5
         
-        # Картинки
-        timer (credits_duration * 0.22) action Show("credits_image", img_name="credits_img_2", is_left=True)
-        timer (credits_duration * 0.30) action Hide("credits_image")
-
-        timer (credits_duration * 0.32) action Show("credits_image", img_name="credits_img_1", is_left=False)
-        timer (credits_duration * 0.40) action Hide("credits_image")
-
-        timer (credits_duration * 0.42) action Show("credits_image", img_name="credits_img_4", is_left=True)
-        timer (credits_duration * 0.50) action Hide("credits_image")
-
-        timer (credits_duration * 0.52) action Show("credits_image", img_name="credits_img_3", is_left=False)
-        timer (credits_duration * 0.60) action Hide("credits_image")
-
-        timer (credits_duration * 0.62) action Show("credits_image", img_name="credits_img_5", is_left=True)
-        timer (credits_duration * 0.70) action Hide("credits_image")
-
-        timer (credits_duration * 0.72) action Show("credits_image", img_name="credits_img_6", is_left=False)
-        timer (credits_duration * 0.80) action Hide("credits_image")
-
-        timer (credits_duration * 0.82) action Show("credits_image", img_name="credits_img_7", is_left=True)
         timer (credits_duration * 1.00) action Hide("credits_image")
         
         add credits_obj xalign 0.5

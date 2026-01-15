@@ -2,6 +2,9 @@ init -1:
     transform set_bright_hovered(brightness_level=0.1):
         matrixcolor BrightnessMatrix(brightness_level)
 
+    transform set_tint_hovered(tint_color="#ffcccc"):
+        matrixcolor TintMatrix(tint_color)
+
     transform sway_hover:
         subpixel True
         rotate_pad False
@@ -38,6 +41,13 @@ init -1:
         ease 1.0 alpha clamp_alpha
         pause 0.5
         repeat
+
+    transform show_screen_transform(show_time=0.5, hide_time=0.5):
+        on show:
+            alpha 0.0
+            linear show_time alpha 1.0
+        on hide:
+            linear hide_time alpha 0.0
 
     transform offset_animated(x_offset = 0, y_offset = 0, time = 1.0):
         subpixel True

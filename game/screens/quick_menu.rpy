@@ -126,7 +126,7 @@ screen quick_menu():
                 focus "tooltip"
                 prefer_top True
                 has frame padding 15,15,15,15
-                background Solid("#00000056")
+                background Solid("#00000038")
                 text tooltip style "tooltip"
 
         

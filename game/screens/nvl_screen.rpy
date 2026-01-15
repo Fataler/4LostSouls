@@ -29,7 +29,7 @@ screen nvl(dialogue, items=None):
         $ current_padding = book_stanzas_padding.get(book_page_stanzas, 40)
         $ book_stanzas_spacing = 40
 
-        if book_page_side == "left":
+        if book_text_side == "left":
             $ d_left = dialogue
             $ d_right = []
         else:
