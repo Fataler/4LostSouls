@@ -15,3 +15,9 @@ default textbox_style = "gui/textbox.png"
 define book_nvl = Character(None, kind=nvl, what_style="book_nvl_text")
 define girl = Character(None)
 define mom = Character(None)
+
+default book_current_img = None
+
+default book_nvl_mode = False
+default book_text_side = "left"
+default book_page_stanzas = 2
