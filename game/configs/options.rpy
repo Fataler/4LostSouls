@@ -34,7 +34,7 @@ define config.speaking_attribute = "talk"
 
 define config.version = "1.0"
 
-define config.mouse = { 'default' : [ ("gui/Cursor.png", 0, 0)], 'inspect' : [ ("gui/CursorR.png", 0, 0)]}
+define config.mouse = { 'default' : [ ("gui/Cursor.png", 0, 0)], 'button' : [ ("gui/CursorR.png", 0, 0)]}
 
 
 ## Текст, помещённый в экран "Об игре". Поместите текст между тройными скобками.
@@ -57,7 +57,7 @@ define gui.about = _p("""
 ## постройке дистрибутивов. Оно должно содержать текст формата ASCII и не должно
 ## содержать пробелы, двоеточия и точки с запятой.
 
-define build.name = "BEyONd_thE_event_horizon"
+define build.name = "4LostSouls"
 
 
 ## Звуки и музыка ##############################################################
@@ -124,7 +124,7 @@ init python:
                 config.keymap[action].remove(key)
 
     # Ensure 'a' and 'A' keys toggle auto-forward mode
-    for k in ['a', 'A']:
+    for k in ['a', 'A', 'ф', 'Ф']:
         if k not in config.keymap['toggle_afm']:
             config.keymap['toggle_afm'].append(k)
 
@@ -156,14 +156,14 @@ define config.window_hide_transition = Dissolve(.2)
 ## в то время как любая другая цифра — это количество символов, печатаемых в
 ## секунду.
 
-default preferences.text_cps = 60
+default preferences.text_cps = 50
 
 ## Стандартная задержка авточтения. Большие значения означают долгие ожидания, а
 ## от 0 до 30 — вполне допустимый диапазон.
 
 default preferences.afm_time = 15
 
-define config.default_text_cps = 60
+define config.default_text_cps = 50
 define config.default_afm_time = 15
 ## Максимальное количество страниц сохранений
 
@@ -185,7 +185,7 @@ define config.has_sync = False
 ## Этот параметр обычно не должен изменяться, а если и изменился, должен быть
 ## текстовой строчкой, а не выражением.
 
-define config.save_directory = "Beyond_the_event_horizon-10_08_2024"
+define config.save_directory = "4LostSouls-10_08_2024"
 
 
 ## Иконка ######################################################################
@@ -261,4 +261,4 @@ init python:
 ## Имя пользователя и название проекта, ассоциированные с проектом на itch.io,
 ## разделённые дробью.
 
-define build.itch_project = "featharine/beyond-the-event-horizon"
+define build.itch_project = "fataler/4LostSouls"

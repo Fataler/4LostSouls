@@ -31,7 +31,7 @@ label start_book:
         align (-0.01, -0.01)
         zoom 1.1
 
-    show bg_book_svet zorder 10:
+    show bg_book_svet onlayer screens zorder 101:
         anchor (1.0, 0.0)
         align (1.0, 0.0)
     with fade
@@ -42,6 +42,7 @@ label start_book:
         zoom 0.8
 
     $ book_nvl_mode = True
+    $ quick_menu = True
 
     # p 1
     $ book_page_side = "left"

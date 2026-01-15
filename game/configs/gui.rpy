@@ -45,12 +45,12 @@ define gui.hover_color = '#96c1c9'
 define gui.selected_color = '#afacac' #6e3c52
 
 ## Цвет, используемый текстовой кнопкой, когда она не может быть выбрана.
-define gui.insensitive_color = '#860000'
+define gui.insensitive_color = '#96c1c9'
 
 ## Цвета, используемые для частей панелей, которые не заполняются. Они
 ## используются не напрямую, а только при воссоздании файлов изображений.
-define gui.muted_color = '#5e0000'
-define gui.hover_muted_color = '#860000'
+define gui.muted_color = '#96c1c9'
+define gui.hover_muted_color = '#5b777c'
 
 ## Цвета, используемые в E0E0E0 диалогов и выборов.
 define gui.text_color = '#ECECEC'
@@ -255,7 +255,7 @@ define gui.main_menu_text_xalign = 1.0
 define gui.frame_borders = Borders(60, 75, 60, 60)
 
 ## Рамки, используемые в частях экрана подтверждения.
-define gui.confirm_frame_borders = Borders(80, 40, 80, 40)
+define gui.confirm_frame_borders = Borders(0, 0, 0, 0)
 
 ## Рамки, используемые в частях экрана пропуска.
 define gui.skip_frame_borders = Borders(24, 8, 75, 8)

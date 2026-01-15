@@ -3,16 +3,8 @@
 ## Быстрое меню показывается внутри игры, чтобы обеспечить лёгкий доступ к
 ## внеигровым меню.
 
-# Плейсхолдеры для изображений
-image quick_arrow_up = Solid("#ffffff", xsize=60, ysize=60)
-image quick_arrow_down = Solid("#aaaaaa", xsize=60, ysize=60)
-image quick_save_btn = Solid("#00ff00", xsize=60, ysize=60)
-image quick_load_btn = Solid("#0000ff", xsize=60, ysize=60)
-image quick_history_btn = Solid("#ffff00", xsize=60, ysize=60)
-image quick_menu_btn = Solid("#ff0000", xsize=60, ysize=60)
-image quick_settings_btn = Solid("#416c79", xsize=60, ysize=60)
-image quick_auto_btn = Solid("#888888", xsize=60, ysize=60)
-image quick_auto_btn_on = Solid("#00ffff", xsize=60, ysize=60)
+image auto_off_button = "gui/A.png"
+image roll_back_off = "gui/rollbek.png"
 
 init python:
     class q_state:
@@ -65,6 +57,10 @@ screen quick_menu():
                         background None
                     tooltip _("Откат")
 
+                if not renpy.can_rollback():
+                    add "roll_back_off":
+                        pos (149, 206)
+
                 button:
                     area (110, 235, 80, 45)
                     action ShowMenu('save')
@@ -99,7 +95,12 @@ screen quick_menu():
                         background Solid("#00ff0055")
                     else:
                         background None
-                    tooltip _("Авточтение")
+                    tooltip ("Авто: Вкл" if _preferences.afm_enable else "Авто: Выкл")
+
+                if (not _preferences.afm_enable):
+                    add "auto_off_button":
+                        pos (69, 378)
+                        zoom 1.02
 
                 button:
                     area (50, 415, 80, 45)
@@ -128,8 +129,8 @@ screen quick_menu():
                 background Solid("#00000056")
                 text tooltip style "tooltip"
 
-        # Перехватываем ESC (game_menu), чтобы вместо меню паузы открывать ленту
-        key "game_menu" action ToggleField(q_state, "open")
+        
+    key "game_menu" action ToggleField(q_state, "open")
 
 init python:
     if "quick_menu" not in config.overlay_screens:
