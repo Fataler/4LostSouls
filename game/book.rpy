@@ -1,11 +1,3 @@
-default book_layout = "left"
-default book_page_id = 0
-default book_current_img = None
-
-default book_nvl_mode = True
-default book_text_side = "left"
-default book_page_stanzas = 2
-
 init python:
     def show_book_img(img_name):
         if store.book_text_side == "left":
