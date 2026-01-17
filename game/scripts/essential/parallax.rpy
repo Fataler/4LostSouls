@@ -57,11 +57,11 @@ init -1 python:
             tr = Dissolve(0.5)
         renpy.with_statement(tr)
 
-image space_bg_image = At("images/Backgrounds/Cosmos.png", space_drift(intensity=5.3, pulse_speed=3.0))
+#image space_bg_image = #At("images/Backgrounds/Cosmos.png", space_drift(intensity=5.3, pulse_speed=3.0))
 
 screen space_bg(image_name, space_bg_name = "space_bg_image"):
     zorder 0
 
-    add "space_bg_image" at truecenter
+    #add "space_bg_image" at truecenter
 
     add image_name at truecenter
