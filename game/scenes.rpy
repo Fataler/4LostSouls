@@ -6,7 +6,7 @@ layeredimage scene_1_image:
     always:
         image:
             "illustrations/1/Hover_Lada.png"
-        at delay_appear(delay = 1.0, time = 1.0)
+        at delay_appear(delay = 2.0, time = 1.0)
     always:
         image:
             "illustrations/1/Hover_stars.png"
@@ -626,7 +626,6 @@ layeredimage scene_28_image:
     always:
         image:
             "illustrations/28/cheli.png"
-        at offset_animated(x_offset = 0, y_offset = 5, time = 2.0)
     always:
         image:
             "illustrations/28/stars.png"
@@ -742,6 +741,14 @@ layeredimage scene_32_image:
         image:
             "illustrations/32/heart.png"
         at candle_pulsation_alpha(delay = 0.0), offset_animated(x_offset = 0, y_offset = 5, time = 2.5)
+    
+    always:
+        image:
+            "illustrations/32/konec.png"
+        at offset_animated(x_offset = 0, y_offset = 5, time = 2.5)
+
+    always:
+        "snow_image"
 # endregion
 
 # region Test Label

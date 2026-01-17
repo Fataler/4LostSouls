@@ -34,7 +34,7 @@ init -1:
 
     transform candle_pulsation_alpha(delay = 0.0, clamp_alpha = 0.5):
         pause delay
-        alpha clamp_alpha
+        ease 0.5 alpha clamp_alpha
         ease 1.0 alpha 1.0
         ease 0.8 alpha 1.0
         ease 1.0 alpha 0.70
