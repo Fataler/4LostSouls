@@ -220,11 +220,11 @@ layeredimage scene_9_image:
     always:
         image:
             "illustrations/9/ekran_1.png"
-            pause 0.2
+            pause 2.5
             "illustrations/9/ekran_2.png"
-            pause 0.2
+            pause 2.5
             "illustrations/9/ekran_3.png"
-            pause 0.2
+            pause 2.5
             repeat
 # endregion
 
@@ -344,13 +344,11 @@ layeredimage scene_15_image:
     always:
         image:
             "illustrations/15/jmih.png"
-        at candle_pulsation_alpha(delay = 0.0), offset_animated(x_offset = 5, y_offset = 5, time = 3.0)
+        at candle_pulsation_alpha(delay = 0.0)
     always:
         image:
             "illustrations/15/svet.png"
         at candle_pulsation_alpha(delay = 0.5), offset_animated(x_offset = 5, y_offset = 5, time = 3.0)
-    always:
-        "snow_image"
 # endregion
 
 # region scene_16
@@ -358,15 +356,14 @@ layeredimage scene_16_image:
     at Transform(crop=(0, 0, 900, 1200), size=(600, 800), subpixel=True)
     always:
         "illustrations/16/fon.png"
+
     always:
         image:
-            "illustrations/16/shobak_1.png"
-            pause 0.5
+            alpha 0.0
+            pause 5.0
             "illustrations/16/shobak_2.png"
-            pause 0.5
-            repeat
-    always:
-        "illustrations/16/ramka.png"
+            linear 0.5 alpha 1.0
+        at _shake(force_x = 1.0, speed = 0.1, do_repeat = True)
     always:
         image:
             "illustrations/16/stars1.png"
@@ -379,6 +376,16 @@ layeredimage scene_16_image:
         "illustrations/16/snow.png"
     always:
         "snow_image"
+        
+    always:
+        "illustrations/16/ramka.png"
+        
+    always:
+        image:
+            "illustrations/16/shobak_1.png"
+            pause 5.0
+            linear 0.5 alpha 0.0
+        at offset_animated(x_offset = 0, y_offset = 10, time = 3.0)
 # endregion
 
 # region scene_17
@@ -516,7 +523,7 @@ layeredimage scene_23_image:
     always:
         image:
             "illustrations/23/Ruki.png"
-        at offset_animated(x_offset = 0, y_offset = 15, time = 3.0)
+        at offset_animated(x_offset = 2, y_offset = 10, time = 2.0)
     always:
         image:
             "illustrations/23/tear_1.png"
@@ -528,6 +535,9 @@ layeredimage scene_23_image:
             "illustrations/23/tear_4.png"
             pause 0.2
             repeat
+
+    always:
+        "snow_image"
 # endregion
 
 # region scene_24
@@ -608,13 +618,15 @@ layeredimage scene_27_image:
 layeredimage scene_28_image:
     at Transform(crop=(0, 0, 900, 1200), size=(600, 800), subpixel=True)
     always:
-        "illustrations/28/fon.png"
-    always:
         "illustrations/28/zaokonie.png"
+    always:
+        "snow_image"
+    always:
+        "illustrations/28/fon.png"
     always:
         image:
             "illustrations/28/cheli.png"
-        at offset_animated(x_offset = 5, y_offset = 0, time = 2.0)
+        at offset_animated(x_offset = 0, y_offset = 5, time = 2.0)
     always:
         image:
             "illustrations/28/stars.png"
@@ -729,7 +741,7 @@ layeredimage scene_32_image:
     always:
         image:
             "illustrations/32/heart.png"
-        at candle_pulsation_alpha(delay = 0.0), _shake(force_x = 1.0, speed = 0.1, do_repeat = True)
+        at candle_pulsation_alpha(delay = 0.0), offset_animated(x_offset = 0, y_offset = 5, time = 2.5)
 # endregion
 
 # region Test Label
@@ -750,6 +762,8 @@ label test_illustrations:
     "scene_7_image"
     scene scene_8_image
     "scene_8_image"
+    scene scene_9_image
+    "scene_9_image"
     scene scene_10_image
     "scene_10_image"
     scene scene_11_image
@@ -760,6 +774,10 @@ label test_illustrations:
     "scene_13_image"
     scene scene_14_image
     "scene_14_image"
+    scene scene_15_image
+    "scene_15_image"
+    scene scene_16_image
+    "scene_16_image"
     scene scene_17_image
     "scene_17_image"
     scene scene_18_image
@@ -772,6 +790,8 @@ label test_illustrations:
     "scene_21_image"
     scene scene_22_image
     "scene_22_image"
+    scene scene_23_image
+    "scene_23_image"
     scene scene_24_image
     "scene_24_image"
     scene scene_25_image
@@ -780,9 +800,15 @@ label test_illustrations:
     "scene_26_image"
     scene scene_27_image
     "scene_27_image"
+    scene scene_28_image
+    "scene_28_image"
     scene scene_29_image
     "scene_29_image"
     scene scene_30_image
     "scene_30_image"
+    scene scene_31_image
+    "scene_31_image"
+    scene scene_32_image
+    "scene_32_image"
     return
 # endregion
