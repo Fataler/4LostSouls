@@ -233,27 +233,22 @@ init python:
     build.classify('**/.**', None)
     build.classify('**/#**', None)
     build.classify('**/thumbs.db', None)
+    build.classify('**.py', None)
+    build.classify('**.json', None)
+    build.classify('**.ico', None)
 
-    ## Чтобы архивировать файлы, классифицируйте их, например, как 'archive'.
+    build.classify('external_resources.txt', 'all')
+    build.classify('walkthrough.txt', 'all')
 
-    # build.classify('game/**.png', 'archive')
-    # build.classify('game/**.jpg', 'archive')
+    build.classify('game/**.rpy', None)
+    build.classify('game/saves/**', None)
+    build.classify('game/cache/**', None)
+    build.classify('**.txt', None)
 
-    build.classify('game/**.png', 'archive')
-    build.classify('game/**.jpg', 'archive')
-    build.classify('game/**.ogv', 'archive')
-    build.classify('game/**.ogg', 'archive')
-    build.classify('game/**.ttf', 'archive')
-    build.classify('game/**.otf', 'archive')
-    
-    build.classify('game/**.rpy', 'archive')
-    build.classify('game/**.rpym', 'archive')
+    build.classify('game/**', 'archive')
 
-    ## Файлы, соответствующие образцам документации, дублируются в приложениях
-    ## Mac, чтобы они появлялись и в приложении, и в zip архиве.
-
-    build.documentation('*.html')
     build.documentation('*.txt')
+    build.documentation('*.html')
 
 
 ## Для совершения покупок в приложении требуется лицензионный ключ Google Play.
