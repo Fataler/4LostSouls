@@ -149,3 +149,4 @@ transform pin_hover_transform:
         linear 0.4 alpha 1.0
     on idle:
         alpha 0.0
+

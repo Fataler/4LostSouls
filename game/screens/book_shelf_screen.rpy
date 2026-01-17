@@ -43,8 +43,8 @@ label book_shelf:
 
     if result == "read_book":
         $ inspect = "reading"
-        "Эту? Но ведь мы её уже много раз читали."
-        "Ничего! Это моя любимая история!"
+        "Мама: Эту? Но ведь мы её уже много раз читали."
+        "Дочь: Ничего! Это моя любимая история!"
         hide screen book_shelf_screen
         $ inspect = None
         return

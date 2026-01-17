@@ -319,6 +319,7 @@ style tooltip:
     size 35
     font gui.interface_text_font
     color "#f4e5d0"
+    outlines [(2, "#000000", 0, 0)]
 
 style reset_button:
     anchor (1.0, 0.5)

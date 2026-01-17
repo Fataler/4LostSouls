@@ -2,7 +2,7 @@
 define music_amberlight = "audio/bg/Amberlight-chosic.com_.mp3"
 define music_lost_in_the_quiet = "audio/bg/Chromatic Heartbeat - Lost in the Quiet.mp3"
 define music_hope = "audio/bg/Hope-Emotional-Soundtrack(chosic.com).mp3"
-define music_snow_plains = "audio/bg/Over-the-Plains-of-Snow-MP3(chosic.com).mp3"
+define music_dusty_memories = "audio/bg/Dusty-Memories(chosic.com) (1).mp3"
 define music_twinkling_tinsel = "audio/bg/Twinkling Tinsel Trio - Cold Heart Hug.mp3"
 
 # Звуки
@@ -29,6 +29,7 @@ define sfx_cat_angry_2 = "audio/sfx/cat_angry_2.ogg"
 define sfx_cat_cry = "audio/sfx/cat_cry.wav"
 define sfx_door_open = "audio/sfx/door_open.wav"
 define sfx_slap = "audio/sfx/slap.wav"
+define sfx_packet = "audio/sfx/packet_1.ogg"
 
 # Интерфейс
 define sfx_ui_click = "audio/sfx/UI Click.ogg"

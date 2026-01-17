@@ -4,6 +4,12 @@
 ## раскомментировать. Строки, начинающиеся с одной '#' — комментированный код,
 ## который вы можете раскомментировать, если посчитаете это нужным.
 
+python early:
+    import os
+    _is_dev = os.path.exists(os.path.join(config.basedir, "project.json"))
+    
+    config.developer = _is_dev
+    config.console = _is_dev
 
 ## Основное ####################################################################
 
@@ -15,7 +21,6 @@
 define config.name = _("Four Lost Souls")
 define config.image_cache_size_mb = 512
 
-define config.developer = True
 define config.fast_skipping = True if config.developer else False
 
 define config.menu_include_disabled = True
@@ -49,7 +54,7 @@ define gui.about = _p("""
 
 Авторы: \n
 {w=0}     - Featharine ({a=https://vk.com/sweet_sour_figures}ВК{/a}) - концепт, персонажи, CG, UI, музыка\n
-{w=0}     - Fataler ({a=https://steamcommunity.com/id/fataler}Steam{/a}) - сценарий, код, редактура, анимации\n
+{w=0}     - Fataler ({a=https://steamcommunity.com/id/fataler}Steam{/a}) - сценарий, рифма, код, редактура, анимации\n
 """% {"jam": URL_JAM})
 
 
@@ -124,7 +129,7 @@ init python:
                 config.keymap[action].remove(key)
 
     # Ensure 'a' and 'A' keys toggle auto-forward mode
-    for k in ['a', 'A', 'ф', 'Ф']:
+    for k in ['a', 'ф']:
         if k not in config.keymap['toggle_afm']:
             config.keymap['toggle_afm'].append(k)
 
@@ -197,7 +202,7 @@ define config.window_icon = "gui/window_icon.png"
 
 ## Настройка Дистрибутива ######################################################
 ##
-## Эта секция контролирует, как Ren'Py строит дистрибутивные файлы из вашего
+## Эта секция контролирует, как Ren'Py строить дистрибутивные файлы из вашего
 ## проекта.
 
 init python:

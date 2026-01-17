@@ -100,13 +100,14 @@ CG
         
         add credits_obj xalign 0.5
 
-        timer credits_duration + 3 action Show("credits_end")
+        timer credits_duration + 1 action Show("credits_end")
 
         #Click blocker
         button:
             xfill True
             yfill True
             background None
+            mouse "default"
             action [SetScreenVariable("skip_visible", True), SetScreenVariable("skip_fading", False), SetScreenVariable("skip_time", 0.0)]
             hover_sound None
             activate_sound None

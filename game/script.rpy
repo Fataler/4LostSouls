@@ -7,19 +7,19 @@ label start:
     show menu_fon at cinematic_focus(x=0.62, target_zoom = 1.35)
     show menu_svet at cinematic_focus(x=0.62, target_zoom = 1.35), candle_pulsation_alpha()
 
-    girl "Мам! Мам! А почитаешь мне сказку перед сном?"
+    girl "Дочь: Мам! Мам! А почитаешь мне сказку перед сном?"
 
-    mom "Нужно скорее засыпать. Новогодние каникулы закончились, и завтра тебе снова в школу."
+    mom "Мама: Нужно скорее засыпать. Новогодние каникулы закончились, и завтра тебе снова в школу."
 
-    girl "Но только одну, небольшую..."
+    girl "Дочь: Но только одну, небольшую..."
 
-    mom "Хорошо! Выбирай, какую хочешь."
+    mom "Мама: Хорошо! Выбирай, какую хочешь."
     
-    girl "Ура-а! Спасибо!"
+    girl "Дочь: Ура-а! Спасибо!"
 
     call book_shelf from _call_book_shelf
 
-    mom "Тогда ложись поудобнее и слушай."
+    mom "Мама: Тогда ложись поудобнее и слушай."
 
     call start_book from _call_start_book
 
@@ -46,18 +46,17 @@ label start:
     with dissolve
 
 
-    "Вот и всё! Ну, как тебе история?"
+    "Мама: Вот и всё! Ну, как тебе история?"
     "*звуки сопения*"
     
-    "Ха-ха! Доброй ночи тебе, дочка!"
+    "Мама: Ха-ха! Доброй ночи тебе, дочка!"
     
     show menu_okno at cinematic_focus_out(x=0.62, start_zoom=1.35)
     show snow_image at cinematic_focus_out(x=0.62, start_zoom=1.35)
     show menu_fon_completed at cinematic_focus_out(x=0.62, start_zoom=1.35)
     show menu_svet at cinematic_focus_out(x=0.62, start_zoom=1.35), candle_pulsation_alpha()
 
-    $ renpy.pause(3.0, hard=True)
-    
-
     $ persistent.game_completed = True
-    $ MainMenu(confirm=False)
+    $ config.main_menu_music = music_lost_in_the_quiet
+    return
+    # $ MainMenu(confirm=False)

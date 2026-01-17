@@ -29,7 +29,7 @@ layeredimage scene_2_image:
     always:
         image:
             "illustrations/2/2_Lada.png"
-        at offset_animated(x_offset = 0, y_offset = 10, time = 2.0)
+        at offset_animated(x_offset = 0, y_offset = 5, time = 2.0)
     always:
         "illustrations/2/2_svet.png"
     always:
@@ -129,7 +129,9 @@ layeredimage scene_5_image:
 layeredimage scene_6_image:
     at Transform(crop=(0, 0, 900, 1200), size=(600, 800), subpixel=True)
     always:
-        "illustrations/6/fon.png"
+        "illustrations/6/fon.png" 
+    always:
+        "illustrations/6/effect.png"
     always:
         "illustrations/6/1.png"
     always:
@@ -144,8 +146,6 @@ layeredimage scene_6_image:
         image:
             "illustrations/6/sneg.png"
         at candle_pulsation_alpha(delay = 0.0), offset_animated(x_offset = 5, y_offset = 5, time = 3.0)
-    always:
-        "illustrations/6/effect.png"
     always:
         "snow_image"
 # endregion
@@ -527,13 +527,13 @@ layeredimage scene_23_image:
     always:
         image:
             "illustrations/23/tear_1.png"
-            pause 0.2
+            pause 0.3
             "illustrations/23/tear_2.png"
-            pause 0.2
+            pause 0.3
             "illustrations/23/tear_3.png"
-            pause 0.2
+            pause 0.3
             "illustrations/23/tear_4.png"
-            pause 0.2
+            pause 0.3
             repeat
 
     always:
@@ -682,7 +682,7 @@ layeredimage scene_30_image:
     always:
         image:
             "illustrations/30/kisli.png"
-        at offset_animated(x_offset = 0, y_offset = 10, time = 3.0)
+        at offset_animated(x_offset = 0, y_offset = 10, time = 3.0), delay_appear(delay = 2.0, time = 2.0)
     always:
         image:
             "illustrations/30/stars.png"
@@ -745,7 +745,7 @@ layeredimage scene_32_image:
     always:
         image:
             "illustrations/32/konec.png"
-        at offset_animated(x_offset = 0, y_offset = 5, time = 2.5)
+        at offset_animated(x_offset = 0, y_offset = 5, time = 2.5), delay_appear(delay = 8.0, time = 1.0)
 
     always:
         "snow_image"
