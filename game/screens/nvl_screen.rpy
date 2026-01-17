@@ -25,7 +25,7 @@ screen nvl(dialogue, items=None):
 
     if book_nvl_mode:
         $ text_w = 750
-        $ page_h = 740
+        $ page_h = 800
         $ current_padding = book_stanzas_padding.get(book_page_stanzas, 40)
         $ book_stanzas_spacing = 40
 
@@ -43,7 +43,7 @@ screen nvl(dialogue, items=None):
                     background None
                     at book_img_left
                     xsize text_w ysize page_h
-                    left_padding 200
+                    left_padding 180
                     top_padding current_padding
                     vbox:
                         spacing book_stanzas_spacing
@@ -59,7 +59,8 @@ screen nvl(dialogue, items=None):
                     background None
                     at book_img_right
                     xsize text_w ysize page_h
-                    left_padding 180
+                    left_padding 160
+                    right_padding 0
                     top_padding current_padding
                     vbox:
                         spacing book_stanzas_spacing
@@ -194,10 +195,10 @@ style book_nvl_text:
     xpos 0
     xanchor 0
     xsize None
-    xmaximum 500
+    xmaximum 600
     
     font "gui/fonts/Lora-Regular.ttf"
-    size 24
+    size 27
     line_spacing 7
     color "#2b1d0e"
     xalign 0.0

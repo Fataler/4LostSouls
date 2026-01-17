@@ -9,6 +9,10 @@ image menu_pin = "gui/menu/pin.png"
 screen main_menu(from_game_menu=False):
     tag menu
 
+    on "show" action Function(stop_all_sfx)
+    on "replace" action Function(stop_all_sfx)
+    on "start" action Function(stop_all_sfx)
+
     $ elements_apperar_time = 0.5
         
     add "bg_black"

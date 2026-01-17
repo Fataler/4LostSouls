@@ -20,6 +20,7 @@ screen book_shelf_screen():
             hovered SetScreenVariable("is_hovered", True)
             unhovered SetScreenVariable("is_hovered", False)
             focus_mask True
+            activate_sound sfx_ui_click
 
         if is_hovered:
             $ star_pos = (600, 500)
@@ -42,8 +43,8 @@ label book_shelf:
 
     if result == "read_book":
         $ inspect = "reading"
-        "Эту? Но ведь мы много раз её уже читали."
-        "Ничего, это моя самая любимая история!"
+        "Эту? Но ведь мы её уже много раз читали."
+        "Ничего! Это моя любимая история!"
         hide screen book_shelf_screen
         $ inspect = None
         return

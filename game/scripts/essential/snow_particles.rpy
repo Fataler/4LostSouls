@@ -24,6 +24,14 @@ image snow_p_large:
     Text(SNOW_SYMBOL, font=SNOW_FONT, size=18, color="#ffffff9a")
     alpha 0.8
 
+image snow_image_full:
+    contains:
+        SnowBlossom("snow_p_small", count=SNOW_COUNT_SMALL*2, border=50, xspeed=SNOW_DRIFT, yspeed=SNOW_SPEED_SMALL, start=0, fast=True)
+    contains:
+        SnowBlossom("snow_p_med", count=SNOW_COUNT_MED*2, border=50, xspeed=SNOW_DRIFT, yspeed=SNOW_SPEED_MED, start=0, fast=True)
+    contains:
+        SnowBlossom("snow_p_large", count=SNOW_COUNT_LARGE*2, border=50, xspeed=SNOW_DRIFT, yspeed=SNOW_SPEED_LARGE, start=0, fast=True)
+
 image snow_image:
     crop (0, 0, 900, 1200)
     

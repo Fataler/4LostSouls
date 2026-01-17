@@ -1,4 +1,4 @@
-define credits_duration = 60#40.0
+define credits_duration = 50#40.0
 
 init python:    
     class Credits(renpy.Displayable):
@@ -54,8 +54,9 @@ screen credits():
 
 {size=45}{b}{k=5}Fataler{/k}{/b}{/size}
 оригинальная идея
+рифма
 код
-верстка
+вёрстка
 анимации
 музыка и звуки
 
@@ -66,7 +67,7 @@ CG
 музыка и звуки
 
 
-{size=65}{i}Отдельная 
+{size=65}{i}Отдельная
 благодарность:{/i}{/size}
 
 
@@ -77,7 +78,6 @@ CG
 моральная поддержка
 
 {image=credits_img_2} {image=credits_img_3}
-
 
 
 
@@ -100,7 +100,7 @@ CG
         
         add credits_obj xalign 0.5
 
-        timer credits_duration + 5 action Show("credits_end")
+        timer credits_duration + 3 action Show("credits_end")
 
         #Click blocker
         button:
@@ -126,13 +126,25 @@ CG
 
 screen credits_end():
     layer "master"
-    text "Спасибо за игру!":
-        size 95 
-        align (0.5, 0.5)
-        color "#ffffff"
-        at credits_thanks
 
-    timer 8.0 action Return()
+    fixed:
+        at credits_thanks()
+
+        add "credits_us":
+            alpha 0.8
+            anchor (0.0, 0.5)
+            pos (0.03, 0.5)
+
+        add "snow_image_full":
+            alpha 0.5
+
+        text "Спасибо за игру!":
+            style "gui_text"
+            size 95 
+            align (0.5, 0.5)
+            color "#ffffff"
+
+    timer 10.0 action Return()
 
 transform credits_thanks:
     subpixel True

@@ -43,12 +43,12 @@ transform scene_3_lada_move:
     subpixel True
     xoffset 0
     yoffset 0
-    pause 1.0
+    pause 2.0
     linear 0.5 alpha 0.0
     xoffset 160
     zoom 0.8
     linear 0.5 alpha 1.0
-    pause 1.0
+    pause 2.0
     linear 0.5 alpha 0.0
     xoffset 320
     yoffset 300
@@ -179,7 +179,7 @@ layeredimage scene_8_image:
     always:
         image:
             "illustrations/8/8_dver.png"
-            pause 2.0
+            pause 3.0
             linear 0.5 alpha 0.0
     always:
         "illustrations/8/8_svet.png"
@@ -197,6 +197,34 @@ layeredimage scene_8_image:
             "illustrations/8/8_tiktok_3.png"
             linear 0.2 alpha 1.0
             pause time_tiktok
+            repeat
+# endregion
+
+# region scene_9
+layeredimage scene_9_image:
+    at Transform(crop=(0, 0, 900, 1200), size=(600, 800), subpixel=True)
+    always:
+        "illustrations/9/fon.png"
+    always:
+        image:
+            "illustrations/9/Lada.png"
+        at offset_animated(x_offset = 0, y_offset = 10, time = 3.0)
+    always:
+        image:
+            "illustrations/9/svet1.png"
+        at candle_pulsation_alpha(delay = 0.0), offset_animated(x_offset = 5, y_offset = 5, time = 3.0)
+    always:
+        image:
+            "illustrations/9/svet2.png"
+        at candle_pulsation_alpha(delay = 0.5), offset_animated(x_offset = 5, y_offset = 5, time = 3.0)
+    always:
+        image:
+            "illustrations/9/ekran_1.png"
+            pause 0.2
+            "illustrations/9/ekran_2.png"
+            pause 0.2
+            "illustrations/9/ekran_3.png"
+            pause 0.2
             repeat
 # endregion
 
@@ -304,6 +332,55 @@ layeredimage scene_14_image:
         at candle_pulsation_alpha(delay = 0.0), offset_animated(x_offset = 5, y_offset = 5, time = 3.0)
 # endregion
 
+# region scene_15
+layeredimage scene_15_image:
+    at Transform(crop=(0, 0, 900, 1200), size=(600, 800), subpixel=True)
+    always:
+        "illustrations/15/fon.png"
+    always:
+        image:
+            "illustrations/15/shobak.png"
+        at offset_animated(x_offset = 0, y_offset = 10, time = 3.0)
+    always:
+        image:
+            "illustrations/15/jmih.png"
+        at candle_pulsation_alpha(delay = 0.0), offset_animated(x_offset = 5, y_offset = 5, time = 3.0)
+    always:
+        image:
+            "illustrations/15/svet.png"
+        at candle_pulsation_alpha(delay = 0.5), offset_animated(x_offset = 5, y_offset = 5, time = 3.0)
+    always:
+        "snow_image"
+# endregion
+
+# region scene_16
+layeredimage scene_16_image:
+    at Transform(crop=(0, 0, 900, 1200), size=(600, 800), subpixel=True)
+    always:
+        "illustrations/16/fon.png"
+    always:
+        image:
+            "illustrations/16/shobak_1.png"
+            pause 0.5
+            "illustrations/16/shobak_2.png"
+            pause 0.5
+            repeat
+    always:
+        "illustrations/16/ramka.png"
+    always:
+        image:
+            "illustrations/16/stars1.png"
+        at candle_pulsation_alpha(delay = 0.0), offset_animated(x_offset = 5, y_offset = 5, time = 3.0)
+    always:
+        image:
+            "illustrations/16/svet.png"
+        at candle_pulsation_alpha(delay = 0.5), offset_animated(x_offset = 5, y_offset = 5, time = 3.0)
+    always:
+        "illustrations/16/snow.png"
+    always:
+        "snow_image"
+# endregion
+
 # region scene_17
 layeredimage scene_17_image:
     at Transform(crop=(0, 0, 900, 1200), size=(600, 800), subpixel=True)
@@ -338,10 +415,10 @@ layeredimage scene_18_image:
         "illustrations/18/1.png"
     always:
         image:
-            pause 5.0
+            pause 6.0
             alpha 0.0
             "illustrations/18/2.png"
-            linear 2 alpha 1.0
+            linear 3 alpha 1.0
 # endregion
 
 # region scene_19
@@ -413,7 +490,7 @@ layeredimage scene_22_image:
         "illustrations/22/fon.png"
     always:
         image:
-            pause 2.0
+            pause 7.0
             xoffset 80
             alpha 0.0
             "illustrations/22/kot.png"
@@ -427,6 +504,30 @@ layeredimage scene_22_image:
         image:
             "illustrations/22/svet_luna_nad_kotom.png"
         at candle_pulsation_alpha(delay = 0.5), offset_animated(x_offset = 5, y_offset = 5, time = 3.0)
+# endregion
+
+# region scene_23
+layeredimage scene_23_image:
+    at Transform(crop=(0, 0, 900, 1200), size=(600, 800), subpixel=True)
+    always:
+        "illustrations/23/fon.png"
+    always:
+        "illustrations/23/Lada.png"
+    always:
+        image:
+            "illustrations/23/Ruki.png"
+        at offset_animated(x_offset = 0, y_offset = 15, time = 3.0)
+    always:
+        image:
+            "illustrations/23/tear_1.png"
+            pause 0.2
+            "illustrations/23/tear_2.png"
+            pause 0.2
+            "illustrations/23/tear_3.png"
+            pause 0.2
+            "illustrations/23/tear_4.png"
+            pause 0.2
+            repeat
 # endregion
 
 # region scene_24
@@ -503,6 +604,27 @@ layeredimage scene_27_image:
         at candle_pulsation_alpha(delay = 0.5), offset_animated(x_offset = 5, y_offset = 5, time = 3.0)
 # endregion
 
+# region scene_28
+layeredimage scene_28_image:
+    at Transform(crop=(0, 0, 900, 1200), size=(600, 800), subpixel=True)
+    always:
+        "illustrations/28/fon.png"
+    always:
+        "illustrations/28/zaokonie.png"
+    always:
+        image:
+            "illustrations/28/cheli.png"
+        at offset_animated(x_offset = 5, y_offset = 0, time = 2.0)
+    always:
+        image:
+            "illustrations/28/stars.png"
+        at candle_pulsation_alpha(delay = 0.0), offset_animated(x_offset = 5, y_offset = 5, time = 3.0)
+    always:
+        image:
+            "illustrations/28/svet.png"
+        at candle_pulsation_alpha(delay = 0.5), offset_animated(x_offset = 5, y_offset = 5, time = 3.0)
+# endregion
+
 # region scene_29
 layeredimage scene_29_image:
     at Transform(crop=(0, 0, 900, 1200), size=(600, 800), subpixel=True)
@@ -566,6 +688,48 @@ layeredimage scene_30_image:
         "illustrations/30/sneg.png"
     always:
         "snow_image"
+# endregion
+
+# region scene_31
+layeredimage scene_31_image:
+    at Transform(crop=(0, 0, 900, 1200), size=(600, 800), subpixel=True)
+    always:
+        "illustrations/31/fon.png"
+    always:
+        image:
+            "illustrations/31/kisli.png"
+        at offset_animated(x_offset = 0, y_offset = 10, time = 3.0)
+    always:
+        image:
+            "illustrations/31/stars.png"
+        at candle_pulsation_alpha(delay = 0.0), offset_animated(x_offset = 5, y_offset = 5, time = 3.0)
+    always:
+        "illustrations/31/snow.png"
+    always:
+        image:
+            "illustrations/31/wind.png"
+        at offset_animated(x_offset = 20, y_offset = 5, time = 1.0)
+    always:
+        "snow_image"
+# endregion
+
+# region scene_32
+layeredimage scene_32_image:
+    at Transform(crop=(0, 0, 900, 1200), size=(600, 800), subpixel=True)
+    always:
+        "illustrations/32/fon.png"
+    always:
+        image:
+            "illustrations/32/varejka.png"
+        at offset_animated(x_offset = 0, y_offset = 10, time = 3.0)
+    always:
+        image:
+            "illustrations/32/jmih.png"
+        at candle_pulsation_alpha(delay = 0.0), offset_animated(x_offset = 5, y_offset = 5, time = 3.0)
+    always:
+        image:
+            "illustrations/32/heart.png"
+        at candle_pulsation_alpha(delay = 0.0), _shake(force_x = 1.0, speed = 0.1, do_repeat = True)
 # endregion
 
 # region Test Label

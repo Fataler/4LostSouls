@@ -7,16 +7,20 @@
 ## экран предназначен для использования с одним или несколькими дочерними
 ## элементами, которые трансклюдируются (помещаются) внутрь него.
 
-screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
+screen game_menu(title, scroll=None, yinitial=0.0, spacing=0, show_background=True, x_offset=0.0):
     
     style_prefix "game_menu"
 
-    add "menu_okno"
-    add "snow_image":
-        pos (900, 0)
+    if show_background:
+        add "credits_bg"
+        add "snow_image_full":
+            alpha 0.5
+        # add "menu_okno"
+        # add "snow_image":
+        #     pos (900, 0)
 
-    add "menu_fon"
-    add "menu_svet" at candle_pulsation_alpha
+        # add "menu_fon"
+        # add "menu_svet" at candle_pulsation_alpha
 
     add "bg_black_t_30"
 
@@ -27,7 +31,8 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
         style "game_menu_outer_frame"
 
         hbox:
-
+            xalign 0.5
+            xoffset x_offset
             frame:
                 style "game_menu_content_frame"
 
@@ -43,6 +48,7 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
                         side_yfill True
 
                         vbox:
+                            xfill True
                             spacing spacing
 
                             transclude
@@ -81,10 +87,9 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
 
 
 style game_menu_outer_frame is empty:
-    #background "#90909085"
-    xpos 0.37
-    yoffset -10
-    
+    xalign 0.5
+    yoffset 0
+
 style game_menu_navigation_frame is empty
 style game_menu_content_frame is empty
 style game_menu_viewport is gui_viewport
@@ -94,16 +99,12 @@ style game_menu_scrollbar is gui_vscrollbar
 style game_menu_label is gui_label
 style game_menu_label_text is gui_label_text
 
-# style return_button is gui_button
-# style return_button_text is main_menu_button_text
-
 style game_menu_content_frame:
     #background "#90909085"
-    left_margin 220
-    #right_margin 50
     top_margin 120
     bottom_margin 80
-    xsize 1200
+    xalign 0.5
+    xsize 1100
 
 style game_menu_vscrollbar:
     unscrollable gui.unscrollable
@@ -125,4 +126,4 @@ style return_button:
     xpos gui.navigation_xpos
     hover_color gui.hover_color
     yalign 1.0
-    yoffset -45
+    yoffset -35

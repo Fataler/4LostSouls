@@ -48,7 +48,7 @@ echo Root: "%ROOT%"
 echo.
 
 rem ===== Рекурсивная обработка OGG и MP3 =====
-for /R "%ROOT%" %%F in (*.ogg *.mp3) do (
+for /R "%ROOT%" %%F in (*.ogg *.mp3 *.wav) do (
   set "FULL=%%~fF"
   set "DIR=%%~dpF"
   set "BASE=%%~nF"

@@ -31,6 +31,9 @@ image book_logo = "images/Book/logo_black.png"
 image credits_bg:
     "images/Credits/Credits.png"
 
+image credits_us:
+    "images/Credits/thanks.png"
+
 image credits_img_1:
     "images/Credits/1.png"
 image credits_img_2:

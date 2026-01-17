@@ -71,7 +71,7 @@ define config.has_music = True
 define config.has_voice = False
 
 define config.default_sfx_volume = 0.6
-define config.default_music_volume = 0.6
+define config.default_music_volume = 0.40
 
 ## Чтобы разрешить игроку тестировать громкость на звуковом или голосовом
 ## каналах, раскомментируйте строчку и настройте пример звука для прослушивания.
@@ -84,7 +84,7 @@ define config.default_music_volume = 0.6
 ## проигрываться в главном меню. Этот файл продолжит проигрываться во время
 ## игры, если не будет остановлен, или не начнёт проигрываться другой аудиофайл.
 
-define config.main_menu_music = music_main_theme
+define config.main_menu_music = music_twinkling_tinsel if not persistent.game_completed else music_lost_in_the_quiet
 
 
 ## Переходы ####################################################################

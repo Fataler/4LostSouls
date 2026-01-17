@@ -18,6 +18,6 @@ define mom = Character(None)
 
 default book_current_img = None
 
-default book_nvl_mode = False
+default book_nvl_mode = True
 default book_text_side = "left"
 default book_page_stanzas = 2

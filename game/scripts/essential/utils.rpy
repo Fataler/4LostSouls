@@ -151,7 +151,13 @@ init -1 python:
 #endregion
 #region pause_sfx
 init -1 python:
+    sfx_channels = ("sfx", "sfx2", "sfx3", "sound")
+    
     def pause_sfx(enable):
-        for ch in ("sfx", "sfx2", "sfx3", "sound"):
+        for ch in sfx_channels:
             renpy.music.set_pause(enable, channel=ch)
+
+    def stop_all_sfx(fadeout=1.0):
+        for ch in sfx_channels:
+            renpy.music.stop(channel=ch, fadeout=fadeout)
 #endregion

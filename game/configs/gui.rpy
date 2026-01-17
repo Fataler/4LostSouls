@@ -42,7 +42,7 @@ define gui.hover_color = '#96c1c9'
 ## Цвет, используемый текстовой кнопкой, когда она выбрана, но не наведена.
 ## Кнопка может быть выбрана, если это текущий экран или текущее значение
 ## настройки.
-define gui.selected_color = '#afacac' #6e3c52
+define gui.selected_color = '#96c1c9' #6e3c52
 
 ## Цвет, используемый текстовой кнопкой, когда она не может быть выбрана.
 define gui.insensitive_color = '#96c1c9'
@@ -69,7 +69,7 @@ define gui.name_text_font = "gui/fonts/Lora-Regular.ttf"
 define gui.interface_text_font = "gui/fonts/Evolventa-Regular.ttf"
 
 ## Размер нормального текста диалога.
-define gui.text_size = 36
+define gui.text_size = 38
 
 ## Размер имён персонажей.
 define gui.name_text_size = 45

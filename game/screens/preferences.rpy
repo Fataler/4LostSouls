@@ -73,16 +73,18 @@ screen preferences():
 
             vbox:
                 xalign 0.5
-                spacing 20
+                spacing 25
                 
                 label _("{u}Текст{/u}"):
                     xalign 0.5
                 
                 vpgrid:
+                    xalign 0.5
                     cols 2
                     rows 2
                     xspacing 250
-                    xsize 900
+                    yspacing 25
+                    xsize 850
                         
                     text _("Скорость\nтекста"):
                         style "pref_text_label"
@@ -93,66 +95,52 @@ screen preferences():
                     text _("Скорость\nавточтения"):
                         style "pref_text_label"
                         
-                        
                     bar value Preference("auto-forward time"):
                         style "pref_bar"
 
-                vbox:
+            vbox:
+                xalign 0.5
+                spacing 25
+                
+                label _("{u}Пропускать{/u}"):
                     xalign 0.5
-                    spacing 15
-                    
-                    label _("{u}Пропускать{/u}"):
-                        xalign 0.5
 
-                    hbox:
-                        xalign 0.5
-                        spacing 30
-                        style_prefix "check"
-                        
-                        textbutton _("Прочитанный текст"):
-                            action Preference("skip", "seen")
-                            
-                        textbutton _("Весь текст"):
-                            action Preference("skip", "all")
+                hbox:
+                    xalign 0.5
+                    spacing 50
+                    style_prefix "check"
+                    
+                    textbutton _("Прочитанный текст") action Preference("skip", "seen")
+                    textbutton _("Весь текст") action Preference("skip", "all")
 
             vbox:
                 xalign 0.5
-                spacing 20
+                spacing 25
                 
                 label _("{u}Звук{/u}"):
                     xalign 0.5
                 
-                # Слайдеры громкости
                 vpgrid:
+                    xalign 0.5
                     cols 2
                     rows 2
                     xspacing 250
-                    yspacing 20
-                    xsize 900
+                    yspacing 25
+                    xsize 850
                     
                     if config.has_music:
-                        text _("Громкость музыки"):
+                        text _("Громкость\nмузыки"):
                             style "pref_text_label"
                             
                         bar value Preference("music volume"):
                             style "pref_bar"
-                            
-                        if config.sample_sound:
-                            textbutton _("Тест"):
-                                action Play("sound", config.sample_sound)
-                                xsize 100
                                     
                     if config.has_sound:
-                            text _("Громкость звуков"):
-                                style "pref_text_label"
-                                
-                            bar value Preference("sound volume"):
-                                style "pref_bar"
-                                
-                            if config.sample_sound:
-                                textbutton _("Тест"):
-                                    action Play("sound", config.sample_sound)
-                                    xsize 100
+                        text _("Громкость\nзвуков"):
+                            style "pref_text_label"
+                            
+                        bar value Preference("sound volume"):
+                            style "pref_bar"
                 
                 # Кнопка "Без звука"
                 if config.has_music or config.has_sound or config.has_voice:
@@ -318,11 +306,12 @@ style pref_control_hbox:
     xsize 800
 
 style pref_bar is gui_bar:
-    xsize 380
+    xsize 400
     yalign 0.5
 
 style pref_text_label is settings_text:
-    xsize 280
+    xsize 300
+    ysize 80 # Фиксированная высота для меток, чтобы полоски не "прыгали"
     text_align 0.0
     yalign 0.5
 
