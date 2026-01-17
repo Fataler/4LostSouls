@@ -17,13 +17,13 @@ label start:
     
     girl "Ура-а! Спасибо!"
 
-    call book_shelf
+    call book_shelf from _call_book_shelf
 
     mom "Тогда ложись поудобнее и слушай."
 
-    call start_book
+    call start_book from _call_start_book
 
-    call label_credits
+    call label_credits from _call_label_credits
 
     scene black
 

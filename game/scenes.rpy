@@ -107,20 +107,20 @@ layeredimage scene_4_image:
 layeredimage scene_5_image:
     at Transform(crop=(0, 0, 900, 1200), size=(600, 800), subpixel=True)
     always:
-        "illustrations/5/5_0004_Пиксельный-слой.png"
+        "illustrations/5/5_0004_pixel-layer.png"
     always:
-        "illustrations/5/5_0003_Пиксельный-слой.png"
+        "illustrations/5/5_0003_pixel-layer.png"
     always:
         image:
-            "illustrations/5/5_0002_Пиксельный-слой.png"
+            "illustrations/5/5_0002_pixel-layer.png"
         at candle_pulsation_alpha(delay = 0.0), offset_animated(x_offset = 5, y_offset = 5, time = 3.0)
     always:
         image:
-            "illustrations/5/5_0001_Пиксельный-слой.png"
+            "illustrations/5/5_0001_pixel-layer.png"
         at candle_pulsation_alpha(delay = 0.0), offset_animated(x_offset = 5, y_offset = 5, time = 3.0)
     always:
         image:
-            "illustrations/5/5_0000_Пиксельный-слой.png"
+            "illustrations/5/5_0000_pixel-layer.png"
     always:
         "snow_image"
 # endregion
@@ -319,7 +319,7 @@ layeredimage scene_13_image:
 layeredimage scene_14_image:
     at Transform(crop=(0, 0, 900, 1200), size=(600, 800), subpixel=True)
     always:
-        "illustrations/14/14_0003_Пиксельный-слой.png"
+        "illustrations/14/14_0003_pixel-layer.png"
     always:
         image:
             "illustrations/14/14_0002_girlanda.png"
